@@ -1,0 +1,76 @@
+generated: '2026-08-05'
+method: derived
+source: >-
+  openapi/prometheus-fuels-*-api-openapi.yml + conventions/prometheus-fuels-conventions.yml + live
+  probes of https://prometheusfuels.ai on 2026-08-05
+scope: >-
+  Cross-cutting standards conformance for the WordPress REST API (wp/v2) behind prometheusfuels.ai —
+  the only machine-readable surface Prometheus Fuels operates. Each entry is derived from observed
+  spec/route metadata or a live probe; absence of a standard is recorded honestly, not penalized.
+  Prometheus Fuels publishes no compliance program, certification or trust center, so no `Compliance`
+  pointer is emitted.
+standards:
+- id: openapi
+  conforms: true
+  evidence: >-
+    12 OpenAPI 3.1.0 documents (94 operations) derived from the server's own published route metadata
+    at https://prometheusfuels.ai/wp-json/wp/v2. Derived by API Evangelist, not published by the
+    provider.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    No oauth2 securityScheme. The only scheme is HTTP Basic (WordPress application passwords);
+    /.well-known/oauth-authorization-server returned 404.
+- id: oidc
+  conforms: false
+  evidence: No openIdConnect scheme; /.well-known/openid-configuration returned 404.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: >-
+    Errors use the flat WordPress envelope (code/message/data.status) with content-type
+    application/json, not application/problem+json.
+- id: rfc8288-web-linking
+  conforms: true
+  evidence: >-
+    Collection responses carry an RFC 8288 Link header with rel="next"/"prev" (observed on
+    GET /wp/v2/news-articles?per_page=1); every resource carries a `_links` object.
+- id: pagination
+  conforms: true
+  evidence: >-
+    Page-number pagination (page/per_page, per_page bounded 1..100) with X-WP-Total and
+    X-WP-TotalPages response headers, both exposed via Access-Control-Expose-Headers.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key header or parameter is exposed by any route in the published metadata.
+- id: json
+  conforms: true
+  evidence: All operations negotiate application/json; responses are application/json; charset=UTF-8.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returned 404 on prometheusfuels.ai on 2026-08-05.
+- id: rfc8594-sunset
+  conforms: false
+  evidence: No Sunset or Deprecation response headers were observed; no deprecation policy is published.
+- id: cors
+  conforms: true
+  evidence: >-
+    Access-Control-Expose-Headers (X-WP-Total, X-WP-TotalPages, Link) and Access-Control-Allow-Headers
+    (Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type) are returned on
+    collection responses.
+- id: asyncapi
+  conforms: false
+  evidence: >-
+    No event, streaming or webhook surface exists on this host; no AsyncAPI is published and none is
+    derivable. Not penalized — there is nothing to describe.
+- id: mcp
+  conforms: false
+  evidence: >-
+    No `mcp` namespace in the /wp-json/ discovery document (29 namespaces advertised); /wp-json/mcp
+    returned rest_no_route (404).
+- id: a2a
+  conforms: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json both returned 404 on prometheusfuels.ai.
+related:
+- conventions/prometheus-fuels-conventions.yml
+- openapi/prometheus-fuels-news-articles-api-openapi.yml

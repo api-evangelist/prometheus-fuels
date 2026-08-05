@@ -1,0 +1,162 @@
+generated: '2026-08-05'
+method: derived
+source: >-
+  openapi/prometheus-fuels-*-api-openapi.yml (route metadata from
+  https://prometheusfuels.ai/wp-json/wp/v2) + the id-reference fields observed on live anonymous
+  responses from each collection on 2026-08-05
+scope: >-
+  Entity-relationship graph for the WordPress REST API behind prometheusfuels.ai — the only
+  machine-readable surface Prometheus Fuels operates. Relationships were read from foreign-key-style
+  fields actually present on live responses (author, post, parent, featured_media, categories, tags)
+  and from the collection filter parameters that accept those ids. No relationships were invented, and
+  no entity from the Prometheus Fuels fuels/energy business is modelled here — the company publishes no
+  product API.
+entities:
+- name: post
+  collection: /wp/v2/posts
+  id_field: id
+  observed_fields: [id, date, date_gmt, guid, modified, slug, status, type, link, title, content,
+                    excerpt, author, featured_media, comment_status, ping_status, sticky, template,
+                    format, meta, categories, tags, class_list, acf, yoast_head, yoast_head_json]
+  operations: [listWpV2Posts, getWpV2PostsById, createWpV2Posts, replaceWpV2PostsById,
+               updateWpV2PostsById, deleteWpV2PostsById]
+- name: page
+  collection: /wp/v2/pages
+  id_field: id
+  observed_fields: [id, date, guid, modified, slug, status, type, link, title, content, excerpt,
+                    author, featured_media, parent, menu_order, comment_status, template, meta, acf]
+  operations: [listWpV2Pages, getWpV2PagesById, createWpV2Pages, replaceWpV2PagesById,
+               updateWpV2PagesById, deleteWpV2PagesById]
+- name: news-article
+  collection: /wp/v2/news-articles
+  id_field: id
+  custom_post_type: true
+  note: >-
+    Site-specific custom post type carrying Prometheus Fuels press and news coverage. Three items
+    published as of 2026-08-05 (X-WP-Total: 3). Unlike `post` it exposes no author, categories or
+    tags fields on the public `view` context.
+  observed_fields: [id, date, date_gmt, guid, modified, slug, status, type, link, title, content,
+                    excerpt, template, class_list, acf, yoast_head, yoast_head_json]
+  operations: [listWpV2NewsArticles, getWpV2NewsArticlesById, createWpV2NewsArticles,
+               replaceWpV2NewsArticlesById, updateWpV2NewsArticlesById, deleteWpV2NewsArticlesById]
+- name: media
+  collection: /wp/v2/media
+  id_field: id
+  observed_fields: [id, date, guid, modified, slug, status, type, link, title, author, description,
+                    caption, alt_text, media_type, mime_type, media_details, source_url, filename,
+                    filesize, post, featured_media, meta]
+  operations: [listWpV2Media, getWpV2MediaById, createWpV2Media, replaceWpV2MediaById,
+               updateWpV2MediaById, deleteWpV2MediaById]
+- name: comment
+  collection: /wp/v2/comments
+  id_field: id
+  observed_fields: [id, post, parent, author, author_name, author_url, author_avatar_urls, date,
+                    content, link, status, type, meta]
+  operations: [listWpV2Comments, getWpV2CommentsById, createWpV2Comments, replaceWpV2CommentsById,
+               updateWpV2CommentsById, deleteWpV2CommentsById]
+- name: category
+  collection: /wp/v2/categories
+  id_field: id
+  taxonomy: category
+  observed_fields: [id, count, description, link, name, slug, taxonomy, parent, meta, acf]
+  operations: [listWpV2Categories, getWpV2CategoriesById, createWpV2Categories,
+               replaceWpV2CategoriesById, updateWpV2CategoriesById, deleteWpV2CategoriesById]
+- name: tag
+  collection: /wp/v2/tags
+  id_field: id
+  taxonomy: post_tag
+  note: Collection returned an empty array on 2026-08-05 — the site defines the taxonomy but publishes no tags.
+  operations: [listWpV2Tags, getWpV2TagsById, createWpV2Tags, replaceWpV2TagsById,
+               updateWpV2TagsById, deleteWpV2TagsById]
+- name: user
+  collection: /wp/v2/users
+  id_field: id
+  note: >-
+    Author records only. API Evangelist records the entity and its operations but harvests no user
+    data from this collection.
+  operations: [listWpV2Users, getWpV2UsersById, listWpV2UsersMe]
+- name: taxonomy
+  collection: /wp/v2/taxonomies
+  id_field: slug
+  operations: [listWpV2Taxonomies, getWpV2TaxonomiesByTaxonomy]
+- name: type
+  collection: /wp/v2/types
+  id_field: slug
+  note: Enumerates the registered content types, including the site-specific `news-articles` type.
+  operations: [listWpV2Types, getWpV2TypesByType]
+- name: status
+  collection: /wp/v2/statuses
+  id_field: slug
+  operations: [listWpV2Statuses, getWpV2StatusesByStatus]
+relationships:
+- from: post
+  to: user
+  type: belongs_to
+  via: author
+- from: post
+  to: media
+  type: belongs_to
+  via: featured_media
+- from: post
+  to: category
+  type: has_many
+  via: categories
+- from: post
+  to: tag
+  type: has_many
+  via: tags
+- from: post
+  to: comment
+  type: has_many
+  via: comments.post
+- from: page
+  to: user
+  type: belongs_to
+  via: author
+- from: page
+  to: page
+  type: belongs_to
+  via: parent
+- from: page
+  to: media
+  type: belongs_to
+  via: featured_media
+- from: media
+  to: user
+  type: belongs_to
+  via: author
+- from: media
+  to: post
+  type: belongs_to
+  via: post
+- from: comment
+  to: post
+  type: belongs_to
+  via: post
+- from: comment
+  to: comment
+  type: belongs_to
+  via: parent
+- from: comment
+  to: user
+  type: belongs_to
+  via: author
+- from: category
+  to: category
+  type: belongs_to
+  via: parent
+- from: category
+  to: taxonomy
+  type: belongs_to
+  via: taxonomy
+hypermedia:
+  note: >-
+    Every resource carries a `_links` object naming its related collections (self, collection, author,
+    replies, wp:featuredmedia, wp:term), and `?_embed` inlines them under `_embedded`.
+not_modelled:
+  note: >-
+    Prometheus Fuels' fuel production, ULDES, plant telemetry and offtake domain entities are NOT
+    represented anywhere in a public API. Nothing about them is modelled here.
+related:
+- conventions/prometheus-fuels-conventions.yml
+- openapi/prometheus-fuels-news-articles-api-openapi.yml

@@ -1,0 +1,57 @@
+generated: '2026-08-05'
+method: derived
+status: candidate
+source: openapi/prometheus-fuels-*-api-openapi.yml
+searched:
+  result: none
+  evidence:
+  - {url: 'https://prometheusfuels.ai/wp-json/', status: 200, note: '29 namespaces advertised; none is `mcp`'}
+  - {url: 'https://prometheusfuels.ai/wp-json/mcp', status: 404, note: 'rest_no_route — no WordPress MCP Adapter installed'}
+  - {url: 'https://prometheusfuels.ai/wp-json/wp-abilities/v1', status: 200, note: 'Abilities namespace present, but /abilities is 401 rest_forbidden'}
+  note: >-
+    Prometheus Fuels operates no hosted or remote MCP server, and none is published in any registry
+    under its name. The tools below are a CANDIDATE list derived from the anonymous read operations of
+    the site's WordPress REST API — they are what an MCP server over this surface would expose. They
+    are not offered by Prometheus Fuels and no endpoint is asserted.
+server:
+  name: prometheus-fuels-site-content
+  transport: http
+  url: null
+  note: No server URL — candidate only.
+tools:
+- name: list_news_articles
+  description: List Prometheus Fuels news and press articles.
+  source_operation: openapi/prometheus-fuels-news-articles-api-openapi.yml#listWpV2NewsArticles
+- name: get_news_article
+  description: Retrieve a single Prometheus Fuels news article by id.
+  source_operation: openapi/prometheus-fuels-news-articles-api-openapi.yml#getWpV2NewsArticlesById
+- name: list_pages
+  description: List the pages of the Prometheus Fuels corporate site.
+  source_operation: openapi/prometheus-fuels-pages-api-openapi.yml#listWpV2Pages
+- name: get_page
+  description: Retrieve a single site page (Home, About, Technology, ULDES) by id.
+  source_operation: openapi/prometheus-fuels-pages-api-openapi.yml#getWpV2PagesById
+- name: list_posts
+  description: List blog posts.
+  source_operation: openapi/prometheus-fuels-posts-api-openapi.yml#listWpV2Posts
+- name: get_post
+  description: Retrieve a single blog post by id.
+  source_operation: openapi/prometheus-fuels-posts-api-openapi.yml#getWpV2PostsById
+- name: search_site
+  description: Cross-type search across posts, pages and news articles.
+  source_operation: openapi/prometheus-fuels-search-api-openapi.yml#listWpV2Search
+- name: list_media
+  description: List media library items (images, documents) with source URLs.
+  source_operation: openapi/prometheus-fuels-media-api-openapi.yml#listWpV2Media
+- name: list_categories
+  description: List content categories.
+  source_operation: openapi/prometheus-fuels-categories-api-openapi.yml#listWpV2Categories
+- name: list_types
+  description: List registered content types, including the site-specific news-articles type.
+  source_operation: openapi/prometheus-fuels-types-api-openapi.yml#listWpV2Types
+tools_note: >-
+  Only anonymous read operations are proposed. Write operations exist on the same routes but require
+  WordPress application passwords and are deliberately excluded from a candidate tool list.
+related:
+- openapi/prometheus-fuels-news-articles-api-openapi.yml
+- conventions/prometheus-fuels-conventions.yml

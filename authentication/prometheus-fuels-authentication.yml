@@ -1,0 +1,63 @@
+generated: '2026-08-05'
+method: derived
+source: >-
+  openapi/prometheus-fuels-*-api-openapi.yml (derived from the live route metadata at
+  https://prometheusfuels.ai/wp-json/wp/v2) + the live discovery document at
+  https://prometheusfuels.ai/wp-json/
+scope: >-
+  Prometheus Fuels publishes no product API and no developer portal, so there is no product
+  authentication model to record. This file describes the auth posture of the one machine-readable
+  surface the company operates: the WordPress REST API behind prometheusfuels.ai.
+summary:
+  types:
+  - http
+schemes:
+- name: applicationPassword
+  type: http
+  scheme: basic
+  description: >-
+    WordPress application passwords, sent as HTTP Basic credentials. The live discovery document at
+    https://prometheusfuels.ai/wp-json/ advertises
+    `authentication.application-passwords.endpoints.authorization` =
+    https://prometheusfuels.ai/wp-admin/authorize-application.php
+  authorization_url: https://prometheusfuels.ai/wp-admin/authorize-application.php
+  sources:
+  - openapi/prometheus-fuels-news-articles-api-openapi.yml
+  - openapi/prometheus-fuels-posts-api-openapi.yml
+anonymous_access:
+  supported: true
+  verified: '2026-08-05'
+  note: >-
+    Each collection below was fetched with no credentials and returned HTTP 200 on 2026-08-05.
+  collections_200:
+  - /wp/v2/posts
+  - /wp/v2/pages
+  - /wp/v2/news-articles
+  - /wp/v2/categories
+  - /wp/v2/tags
+  - /wp/v2/media
+  - /wp/v2/comments
+  - /wp/v2/users
+  - /wp/v2/search
+  - /wp/v2/taxonomies
+  - /wp/v2/types
+  - /wp/v2/statuses
+  collections_401:
+  - path: /wp/v2/settings
+    body: '{"code":"rest_forbidden","message":"Sorry, you are not allowed to do that.","data":{"status":401}}'
+  - path: /wp/v2/menus
+    body: '{"code":"rest_cannot_view","message":"Sorry, you are not allowed to view menus.","data":{"status":401}}'
+  - path: /wp/v2/themes
+    body: '{"code":"rest_cannot_view_themes","message":"Sorry, you are not allowed to view themes.","data":{"status":401}}'
+  - path: /wp/v2/plugins
+    body: '{"code":"rest_cannot_view_plugins","message":"Sorry, you are not allowed to manage plugins for this site.","data":{"status":401}}'
+  - path: /wp-abilities/v1/abilities
+    body: '{"code":"rest_forbidden","message":"Sorry, you are not allowed to do that.","data":{"status":401}}'
+writes_require_auth: true
+oauth: false
+oauth_note: >-
+  No OAuth 2.0 or OpenID Connect surface exists on this host. /.well-known/openid-configuration and
+  /.well-known/oauth-authorization-server both returned 404 on 2026-08-05.
+related:
+- conventions/prometheus-fuels-conventions.yml
+- errors/prometheus-fuels-problem-types.yml

@@ -1,0 +1,17 @@
+generated: '2026-08-05'
+method: generated
+source: openapi/prometheus-fuels-*-api-openapi.yml
+note: >-
+  Packaged Agent Skills for the WordPress REST API behind prometheusfuels.ai — the only
+  machine-readable surface Prometheus Fuels operates. Every step is grounded in an operationId that
+  exists verbatim in the derived OpenAPI; none were invented. No provider-published skills or
+  AGENTS.md exist for this company.
+skills:
+- file: prometheus-fuels-browse-news-articles.md
+  name: Browse Prometheus Fuels news and press articles
+  api: openapi/prometheus-fuels-news-articles-api-openapi.yml
+  operations: [listWpV2NewsArticles, getWpV2NewsArticlesById, listWpV2Types, listWpV2Media]
+- file: prometheus-fuels-search-site-content.md
+  name: Search Prometheus Fuels site content
+  api: openapi/prometheus-fuels-search-api-openapi.yml
+  operations: [listWpV2Search, getWpV2PagesById, getWpV2PostsById, getWpV2NewsArticlesById]

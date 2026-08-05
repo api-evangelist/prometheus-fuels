@@ -1,0 +1,681 @@
+openapi: 3.1.0
+info:
+  title: Prometheus Fuels Website Content API (WordPress REST API) news-articles API
+  version: wp/v2
+  description: Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace. Read operations on posts, pages, the site's `news-articles`
+    custom post type, categories, tags, users, media, comments, search, taxonomies, types and statuses were verified to respond anonymously on 2026-08-05; write operations require authentication via WordPress
+    application passwords (authorization endpoint https://prometheusfuels.ai/wp-admin/authorize-application.php). This is site infrastructure, not a Prometheus Fuels product API — the company publishes
+    no developer portal or first-party API. This document was derived by the API Evangelist enrichment pipeline from the route metadata the server itself publishes at https://prometheusfuels.ai/wp-json/wp/v2
+    — no operations, parameters or schemas were invented.
+  contact:
+    name: Prometheus Fuels
+    email: info@prometheusfuels.com
+    url: https://prometheusfuels.ai/
+servers:
+- url: https://prometheusfuels.ai/wp-json
+  description: Prometheus Fuels WordPress REST API
+security: []
+tags:
+- name: news-articles
+paths:
+  /wp/v2/news-articles:
+    get:
+      operationId: listWpV2NewsArticles
+      summary: GET /wp/v2/news-articles
+      tags:
+      - news-articles
+      responses:
+        '200': &id001
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400': &id002
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401': &id003
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403': &id004
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404': &id005
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: context
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          - edit
+          default: view
+        description: Scope under which the request is made; determines fields present in response.
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+        description: Current page of the collection.
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 10
+          minimum: 1
+          maximum: 100
+        description: Maximum number of items to be returned in result set.
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Limit results to those matching a string.
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Limit response to posts published after a given ISO8601 compliant date.
+      - name: modified_after
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Limit response to posts modified after a given ISO8601 compliant date.
+      - name: before
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Limit response to posts published before a given ISO8601 compliant date.
+      - name: modified_before
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Limit response to posts modified before a given ISO8601 compliant date.
+      - name: exclude
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+        description: Ensure result set excludes specific IDs.
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+        description: Limit result set to specific IDs.
+      - name: search_semantics
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - exact
+        description: How to interpret the search input.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Offset the result set by a specific number of items.
+      - name: order
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+          default: desc
+        description: Order sort attribute ascending or descending.
+      - name: orderby
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - author
+          - date
+          - id
+          - include
+          - modified
+          - parent
+          - relevance
+          - slug
+          - include_slugs
+          - title
+          default: date
+        description: Sort collection by post attribute.
+      - name: search_columns
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - post_title
+            - post_content
+            - post_excerpt
+          default: []
+        description: Array of column names to be searched.
+      - name: slug
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+        description: Limit result set to posts with one or more specific slugs.
+      - name: status
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - publish
+            - future
+            - draft
+            - pending
+            - private
+            - trash
+            - auto-draft
+            - inherit
+            - request-pending
+            - request-confirmed
+            - request-failed
+            - request-completed
+            - acf-disabled
+            - any
+          default: publish
+        description: Limit result set to posts assigned one or more statuses.
+    post:
+      operationId: createWpV2NewsArticles
+      summary: POST /wp/v2/news-articles
+      tags:
+      - news-articles
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, in the site's timezone.
+                date_gmt:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, as GMT.
+                slug:
+                  type: string
+                  description: An alphanumeric identifier for the post unique to its type.
+                status:
+                  type: string
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
+                  description: A named status for the post.
+                password:
+                  type: string
+                  description: A password to protect access to the content and excerpt.
+                title:
+                  type: object
+                  description: The title for the post.
+                content:
+                  type: object
+                  description: The content for the post.
+                excerpt:
+                  type: object
+                  description: The excerpt for the post.
+                template:
+                  type: string
+                  description: The theme file to use to display the post.
+  /wp/v2/news-articles/{id}:
+    get:
+      operationId: getWpV2NewsArticlesById
+      summary: GET /wp/v2/news-articles/{id}
+      tags:
+      - news-articles
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: context
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          - edit
+          default: view
+        description: Scope under which the request is made; determines fields present in response.
+      - name: excerpt_length
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Override the default excerpt length.
+      - name: password
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The password for the post if it is password protected.
+    post:
+      operationId: createWpV2NewsArticlesById
+      summary: POST /wp/v2/news-articles/{id}
+      tags:
+      - news-articles
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, in the site's timezone.
+                date_gmt:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, as GMT.
+                slug:
+                  type: string
+                  description: An alphanumeric identifier for the post unique to its type.
+                status:
+                  type: string
+                  enum: &id006
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
+                  description: A named status for the post.
+                password:
+                  type: string
+                  description: A password to protect access to the content and excerpt.
+                title:
+                  type: object
+                  description: The title for the post.
+                content:
+                  type: object
+                  description: The content for the post.
+                excerpt:
+                  type: object
+                  description: The excerpt for the post.
+                template:
+                  type: string
+                  description: The theme file to use to display the post.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    put:
+      operationId: replaceWpV2NewsArticlesById
+      summary: PUT /wp/v2/news-articles/{id}
+      tags:
+      - news-articles
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, in the site's timezone.
+                date_gmt:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, as GMT.
+                slug:
+                  type: string
+                  description: An alphanumeric identifier for the post unique to its type.
+                status:
+                  type: string
+                  enum: *id006
+                  description: A named status for the post.
+                password:
+                  type: string
+                  description: A password to protect access to the content and excerpt.
+                title:
+                  type: object
+                  description: The title for the post.
+                content:
+                  type: object
+                  description: The content for the post.
+                excerpt:
+                  type: object
+                  description: The excerpt for the post.
+                template:
+                  type: string
+                  description: The theme file to use to display the post.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    patch:
+      operationId: updateWpV2NewsArticlesById
+      summary: PATCH /wp/v2/news-articles/{id}
+      tags:
+      - news-articles
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, in the site's timezone.
+                date_gmt:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, as GMT.
+                slug:
+                  type: string
+                  description: An alphanumeric identifier for the post unique to its type.
+                status:
+                  type: string
+                  enum: *id006
+                  description: A named status for the post.
+                password:
+                  type: string
+                  description: A password to protect access to the content and excerpt.
+                title:
+                  type: object
+                  description: The title for the post.
+                content:
+                  type: object
+                  description: The content for the post.
+                excerpt:
+                  type: object
+                  description: The excerpt for the post.
+                template:
+                  type: string
+                  description: The theme file to use to display the post.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    delete:
+      operationId: deleteWpV2NewsArticlesById
+      summary: DELETE /wp/v2/news-articles/{id}
+      tags:
+      - news-articles
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: force
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+        description: Whether to bypass Trash and force deletion.
+  /wp/v2/news-articles/{id}/autosaves:
+    get:
+      operationId: listWpV2NewsArticlesByIdAutosaves
+      summary: GET /wp/v2/news-articles/{id}/autosaves
+      tags:
+      - news-articles
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: parent
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: The ID for the parent of the autosave.
+      - name: context
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          - edit
+          default: view
+        description: Scope under which the request is made; determines fields present in response.
+    post:
+      operationId: createWpV2NewsArticlesByIdAutosaves
+      summary: POST /wp/v2/news-articles/{id}/autosaves
+      tags:
+      - news-articles
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                parent:
+                  type: integer
+                  description: The ID for the parent of the autosave.
+                date:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, in the site's timezone.
+                date_gmt:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, as GMT.
+                slug:
+                  type: string
+                  description: An alphanumeric identifier for the post unique to its type.
+                status:
+                  type: string
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
+                  description: A named status for the post.
+                password:
+                  type: string
+                  description: A password to protect access to the content and excerpt.
+                title:
+                  type: object
+                  description: The title for the post.
+                content:
+                  type: object
+                  description: The content for the post.
+                excerpt:
+                  type: object
+                  description: The excerpt for the post.
+                template:
+                  type: string
+                  description: The theme file to use to display the post.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+  /wp/v2/news-articles/{parent}/autosaves/{id}:
+    get:
+      operationId: getWpV2NewsArticlesByParentAutosavesById
+      summary: GET /wp/v2/news-articles/{parent}/autosaves/{id}
+      tags:
+      - news-articles
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      parameters:
+      - name: parent
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: context
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          - edit
+          default: view
+        description: Scope under which the request is made; determines fields present in response.
+components:
+  schemas:
+    Error:
+      type: object
+      description: WordPress REST API error envelope.
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_forbidden.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          description: Error detail.
+          properties:
+            status:
+              type: integer
+              description: HTTP status code.
+  securitySchemes:
+    applicationPassword:
+      type: http
+      scheme: basic
+      description: WordPress application passwords. The live discovery document at https://prometheusfuels.ai/wp-json/ advertises `authentication.application-passwords.endpoints.authorization` = https://prometheusfuels.ai/wp-admin/authorize-application.php.
+        Anonymous requests are accepted for the public read operations; write operations and the `edit` context require these credentials.

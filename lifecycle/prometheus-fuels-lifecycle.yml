@@ -1,0 +1,57 @@
+generated: '2026-08-05'
+method: derived
+source: >-
+  openapi/prometheus-fuels-*-api-openapi.yml + the live discovery document at
+  https://prometheusfuels.ai/wp-json/ (probed 2026-08-05)
+scope: >-
+  Lifecycle facts for the one machine-readable surface Prometheus Fuels operates: the WordPress REST
+  API behind prometheusfuels.ai. Prometheus Fuels is a physical electrofuels manufacturer and
+  publishes no product API, so no product-API versioning, deprecation policy, SLA or status page is
+  asserted here. Everything below was confirmed against the live host on 2026-08-05; nothing was
+  assumed from generic WordPress documentation.
+versioning:
+  scheme: namespace-in-path
+  current: wp/v2
+  base: https://prometheusfuels.ai/wp-json
+  discovery: https://prometheusfuels.ai/wp-json/
+  namespaces_advertised: 29
+  note: >-
+    WordPress versions its REST API by namespace segment (wp/v2). The discovery document advertises 29
+    namespaces, mostly plugin surfaces (elementor/v1, elementor-pro/v1, elementskit/*, metform/v1,
+    yoast/v1, oembed/1.0, wp-site-health/v1, wp-block-editor/v1, wp-abilities/v1). No dated API version
+    is exposed. No `mcp` namespace is present on this host.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    No provider deprecation policy is published and no RFC 8594 Sunset/Deprecation response headers
+    were observed. Field-level DEPRECATED notes appear on the media edit route (rotation/x/y/width/
+    height superseded by `modifiers`) but that is WordPress core field guidance, not an API deprecation
+    policy from Prometheus Fuels.
+sla:
+  url: null
+  uptime_target: null
+  note: No SLA is published for this host.
+status_page: null
+status_page_note: >-
+  Prometheus Fuels publishes no status page. status.prometheusfuels.ai does not resolve (no DNS A
+  record, checked 2026-08-05). No StatusPage pointer is emitted.
+changelog: null
+changelog_note: >-
+  No dated API or product changelog is published. The site carries three news articles under the
+  `news-articles` custom post type and one default WordPress "Hello world!" post; /news/, /blog/,
+  /press/ and /news-articles/ all return 404. No ChangeLog pointer is emitted.
+domain_history:
+  note: >-
+    The company's original domain prometheusfuels.com (A 199.36.158.100) 301-redirects to
+    prometheusfuels.ai (A 75.119.204.33), which is the live corporate site. The WordPress author record
+    still carries the build-time host prometheusfuels.dreamhosters.com.
+hosting:
+  platform: WordPress
+  theme_stack: Elementor / Hello Elementor
+  server: Apache
+  observed: '2026-08-05'
+deprecated_operations: []
+related:
+- conventions/prometheus-fuels-conventions.yml
+- security/prometheus-fuels-domain-security.yml

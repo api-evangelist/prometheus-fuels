@@ -1,0 +1,777 @@
+openapi: 3.1.0
+info:
+  title: Prometheus Fuels Website Content API (WordPress REST API) media API
+  version: wp/v2
+  description: Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace. Read operations on posts, pages, the site's `news-articles`
+    custom post type, categories, tags, users, media, comments, search, taxonomies, types and statuses were verified to respond anonymously on 2026-08-05; write operations require authentication via WordPress
+    application passwords (authorization endpoint https://prometheusfuels.ai/wp-admin/authorize-application.php). This is site infrastructure, not a Prometheus Fuels product API — the company publishes
+    no developer portal or first-party API. This document was derived by the API Evangelist enrichment pipeline from the route metadata the server itself publishes at https://prometheusfuels.ai/wp-json/wp/v2
+    — no operations, parameters or schemas were invented.
+  contact:
+    name: Prometheus Fuels
+    email: info@prometheusfuels.com
+    url: https://prometheusfuels.ai/
+servers:
+- url: https://prometheusfuels.ai/wp-json
+  description: Prometheus Fuels WordPress REST API
+security: []
+tags:
+- name: media
+paths:
+  /wp/v2/media:
+    get:
+      operationId: listWpV2Media
+      summary: GET /wp/v2/media
+      tags:
+      - media
+      responses:
+        '200': &id001
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400': &id002
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401': &id003
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403': &id004
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404': &id005
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: context
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          - edit
+          default: view
+        description: Scope under which the request is made; determines fields present in response.
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+        description: Current page of the collection.
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 10
+          minimum: 1
+          maximum: 100
+        description: Maximum number of items to be returned in result set.
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Limit results to those matching a string.
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Limit response to posts published after a given ISO8601 compliant date.
+      - name: modified_after
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Limit response to posts modified after a given ISO8601 compliant date.
+      - name: author
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+        description: Limit result set to posts assigned to specific authors.
+      - name: author_exclude
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+        description: Ensure result set excludes posts assigned to specific authors.
+      - name: before
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Limit response to posts published before a given ISO8601 compliant date.
+      - name: modified_before
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+        description: Limit response to posts modified before a given ISO8601 compliant date.
+      - name: exclude
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+        description: Ensure result set excludes specific IDs.
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+        description: Limit result set to specific IDs.
+      - name: search_semantics
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - exact
+        description: How to interpret the search input.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Offset the result set by a specific number of items.
+      - name: order
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+          default: desc
+        description: Order sort attribute ascending or descending.
+      - name: orderby
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - author
+          - date
+          - id
+          - include
+          - modified
+          - parent
+          - relevance
+          - slug
+          - include_slugs
+          - title
+          default: date
+        description: Sort collection by post attribute.
+      - name: parent
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+        description: Limit result set to items with particular parent IDs.
+      - name: parent_exclude
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+        description: Limit result set to all items except those of a particular parent ID.
+      - name: search_columns
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - post_title
+            - post_content
+            - post_excerpt
+          default: []
+        description: Array of column names to be searched.
+      - name: slug
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+        description: Limit result set to posts with one or more specific slugs.
+      - name: status
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - inherit
+            - private
+            - trash
+          default: inherit
+        description: Limit result set to posts assigned one or more statuses.
+      - name: media_type
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - image
+            - video
+            - text
+            - application
+            - audio
+        description: Limit result set to attachments of a particular media type or media types.
+      - name: mime_type
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+        description: Limit result set to attachments of a particular MIME type or MIME types.
+    post:
+      operationId: createWpV2Media
+      summary: POST /wp/v2/media
+      tags:
+      - media
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, in the site's timezone.
+                date_gmt:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, as GMT.
+                slug:
+                  type: string
+                  description: An alphanumeric identifier for the post unique to its type.
+                status:
+                  type: string
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
+                  description: A named status for the post.
+                title:
+                  type: object
+                  description: The title for the post.
+                author:
+                  type: integer
+                  description: The ID for the author of the post.
+                featured_media:
+                  type: integer
+                  description: The ID of the featured media for the post.
+                comment_status:
+                  type: string
+                  enum:
+                  - open
+                  - closed
+                  description: Whether or not comments are open on the post.
+                ping_status:
+                  type: string
+                  enum:
+                  - open
+                  - closed
+                  description: Whether or not the post can be pinged.
+                meta:
+                  type: object
+                  description: Meta fields.
+                template:
+                  type: string
+                  description: The theme file to use to display the post.
+                alt_text:
+                  type: string
+                  description: Alternative text to display when attachment is not displayed.
+                caption:
+                  type: object
+                  description: The attachment caption.
+                description:
+                  type: object
+                  description: The attachment description.
+                post:
+                  type: integer
+                  description: The ID for the associated post of the attachment.
+  /wp/v2/media/{id}:
+    get:
+      operationId: getWpV2MediaById
+      summary: GET /wp/v2/media/{id}
+      tags:
+      - media
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: context
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          - edit
+          default: view
+        description: Scope under which the request is made; determines fields present in response.
+    post:
+      operationId: createWpV2MediaById
+      summary: POST /wp/v2/media/{id}
+      tags:
+      - media
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, in the site's timezone.
+                date_gmt:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, as GMT.
+                slug:
+                  type: string
+                  description: An alphanumeric identifier for the post unique to its type.
+                status:
+                  type: string
+                  enum: &id006
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
+                  description: A named status for the post.
+                title:
+                  type: object
+                  description: The title for the post.
+                author:
+                  type: integer
+                  description: The ID for the author of the post.
+                featured_media:
+                  type: integer
+                  description: The ID of the featured media for the post.
+                comment_status:
+                  type: string
+                  enum: &id007
+                  - open
+                  - closed
+                  description: Whether or not comments are open on the post.
+                ping_status:
+                  type: string
+                  enum: &id008
+                  - open
+                  - closed
+                  description: Whether or not the post can be pinged.
+                meta:
+                  type: object
+                  description: Meta fields.
+                template:
+                  type: string
+                  description: The theme file to use to display the post.
+                alt_text:
+                  type: string
+                  description: Alternative text to display when attachment is not displayed.
+                caption:
+                  type: object
+                  description: The attachment caption.
+                description:
+                  type: object
+                  description: The attachment description.
+                post:
+                  type: integer
+                  description: The ID for the associated post of the attachment.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    put:
+      operationId: replaceWpV2MediaById
+      summary: PUT /wp/v2/media/{id}
+      tags:
+      - media
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, in the site's timezone.
+                date_gmt:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, as GMT.
+                slug:
+                  type: string
+                  description: An alphanumeric identifier for the post unique to its type.
+                status:
+                  type: string
+                  enum: *id006
+                  description: A named status for the post.
+                title:
+                  type: object
+                  description: The title for the post.
+                author:
+                  type: integer
+                  description: The ID for the author of the post.
+                featured_media:
+                  type: integer
+                  description: The ID of the featured media for the post.
+                comment_status:
+                  type: string
+                  enum: *id007
+                  description: Whether or not comments are open on the post.
+                ping_status:
+                  type: string
+                  enum: *id008
+                  description: Whether or not the post can be pinged.
+                meta:
+                  type: object
+                  description: Meta fields.
+                template:
+                  type: string
+                  description: The theme file to use to display the post.
+                alt_text:
+                  type: string
+                  description: Alternative text to display when attachment is not displayed.
+                caption:
+                  type: object
+                  description: The attachment caption.
+                description:
+                  type: object
+                  description: The attachment description.
+                post:
+                  type: integer
+                  description: The ID for the associated post of the attachment.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    patch:
+      operationId: updateWpV2MediaById
+      summary: PATCH /wp/v2/media/{id}
+      tags:
+      - media
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, in the site's timezone.
+                date_gmt:
+                  type: string
+                  format: date-time
+                  description: The date the post was published, as GMT.
+                slug:
+                  type: string
+                  description: An alphanumeric identifier for the post unique to its type.
+                status:
+                  type: string
+                  enum: *id006
+                  description: A named status for the post.
+                title:
+                  type: object
+                  description: The title for the post.
+                author:
+                  type: integer
+                  description: The ID for the author of the post.
+                featured_media:
+                  type: integer
+                  description: The ID of the featured media for the post.
+                comment_status:
+                  type: string
+                  enum: *id007
+                  description: Whether or not comments are open on the post.
+                ping_status:
+                  type: string
+                  enum: *id008
+                  description: Whether or not the post can be pinged.
+                meta:
+                  type: object
+                  description: Meta fields.
+                template:
+                  type: string
+                  description: The theme file to use to display the post.
+                alt_text:
+                  type: string
+                  description: Alternative text to display when attachment is not displayed.
+                caption:
+                  type: object
+                  description: The attachment caption.
+                description:
+                  type: object
+                  description: The attachment description.
+                post:
+                  type: integer
+                  description: The ID for the associated post of the attachment.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    delete:
+      operationId: deleteWpV2MediaById
+      summary: DELETE /wp/v2/media/{id}
+      tags:
+      - media
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: force
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+        description: Whether to bypass Trash and force deletion.
+  /wp/v2/media/{id}/edit:
+    post:
+      operationId: createWpV2MediaByIdEdit
+      summary: POST /wp/v2/media/{id}/edit
+      tags:
+      - media
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                src:
+                  type: string
+                  format: uri
+                  description: URL to the edited image file.
+                modifiers:
+                  type: array
+                  items:
+                    type: object
+                  description: Array of image edits.
+                rotation:
+                  type: integer
+                  minimum: 0
+                  maximum: 360
+                  description: 'The amount to rotate the image clockwise in degrees. DEPRECATED: Use `modifiers` instead.'
+                x:
+                  type: number
+                  minimum: 0
+                  maximum: 100
+                  description: 'As a percentage of the image, the x position to start the crop from. DEPRECATED: Use `modifiers` instead.'
+                y:
+                  type: number
+                  minimum: 0
+                  maximum: 100
+                  description: 'As a percentage of the image, the y position to start the crop from. DEPRECATED: Use `modifiers` instead.'
+                width:
+                  type: number
+                  minimum: 0
+                  maximum: 100
+                  description: 'As a percentage of the image, the width to crop the image to. DEPRECATED: Use `modifiers` instead.'
+                height:
+                  type: number
+                  minimum: 0
+                  maximum: 100
+                  description: 'As a percentage of the image, the height to crop the image to. DEPRECATED: Use `modifiers` instead.'
+                caption:
+                  type: object
+                  description: The attachment caption.
+                description:
+                  type: object
+                  description: The attachment description.
+                title:
+                  type: object
+                  description: The title for the post.
+                post:
+                  type: integer
+                  description: The ID for the associated post of the attachment.
+                alt_text:
+                  type: string
+                  description: Alternative text to display when attachment is not displayed.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+  /wp/v2/media/{id}/post-process:
+    post:
+      operationId: createWpV2MediaByIdPostProcess
+      summary: POST /wp/v2/media/{id}/post-process
+      tags:
+      - media
+      responses:
+        '200': *id001
+        '400': *id002
+        '401': *id003
+        '403': *id004
+        '404': *id005
+      security:
+      - applicationPassword: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum:
+                  - create-image-subsizes
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+components:
+  schemas:
+    Error:
+      type: object
+      description: WordPress REST API error envelope.
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_forbidden.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          description: Error detail.
+          properties:
+            status:
+              type: integer
+              description: HTTP status code.
+  securitySchemes:
+    applicationPassword:
+      type: http
+      scheme: basic
+      description: WordPress application passwords. The live discovery document at https://prometheusfuels.ai/wp-json/ advertises `authentication.application-passwords.endpoints.authorization` = https://prometheusfuels.ai/wp-admin/authorize-application.php.
+        Anonymous requests are accepted for the public read operations; write operations and the `edit` context require these credentials.

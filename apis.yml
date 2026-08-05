@@ -1,7 +1,21 @@
 aid: prometheus-fuels
 name: Prometheus Fuels
-description: 'Prometheus Fuels is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+image: https://prometheusfuels.ai/wp-content/uploads/2026/03/logo_favicon-300x300.png
+description: >-
+  Prometheus Fuels is a Santa Cruz, California energy company founded in 2019 by Rob McGinnis and
+  launched out of Y Combinator, producing carbon-neutral electrofuels from atmospheric CO2. Its
+  "no-desorb" direct air capture system dissolves CO2 into carbonate ions in water, and its Faraday
+  Reactor hydrocarbon electrolyzer converts that carbon into methanol, gasoline, diesel, jet fuel and
+  renewable natural gas at room temperature and atmospheric pressure using off-grid solar power. The
+  company also markets an Ultra Long Duration Energy Storage (ULDES) product aimed at data-center
+  power, and operates the Titan Forge Alpha pilot plant in Santa Cruz. It is backed by BMW i Ventures,
+  Maersk Growth and Y Combinator. Prometheus Fuels publishes no product API, developer portal or SDK —
+  it is a physical fuels manufacturer. The single machine-readable surface it operates is the
+  WordPress REST API (wp/v2) behind its corporate site at prometheusfuels.ai, which serves anonymous
+  read access to pages, posts, the site's `news-articles` custom post type, categories, tags, media,
+  comments, users, search, taxonomies, types and statuses, with write operations gated behind
+  WordPress application passwords. This profile was enriched by the API Evangelist pipeline from that
+  live surface.
 url: https://raw.githubusercontent.com/api-evangelist/prometheus-fuels/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,12 +26,258 @@ created: '2026-08-05'
 modified: '2026-08-05'
 tags:
 - Company
-apis: []
+- Energy
+- Climate Tech
+- Carbon Capture
+- Synthetic Fuels
+- Direct Air Capture
+- Energy Storage
+- Content API
+- WordPress
+apis:
+- aid: prometheus-fuels:prometheus-fuels-news-articles-api
+  name: Prometheus Fuels news-articles API
+  description: >-
+    The news-articles API from Prometheus Fuels — 10 operation(s) over the site's `news-articles`
+    custom post type, the company's published press and news coverage. Read operations respond
+    anonymously; writes require WordPress application passwords.
+  humanURL: https://prometheusfuels.ai/wp-json/
+  baseURL: https://prometheusfuels.ai/wp-json
+  tags:
+  - news-articles
+  properties:
+  - type: OpenAPI
+    url: openapi/prometheus-fuels-news-articles-api-openapi.yml
+  - type: Overlay
+    url: overlays/prometheus-fuels-news-articles-overlay.yaml
+  - type: Documentation
+    url: https://prometheusfuels.ai/wp-json/
+  - type: APIReference
+    url: https://developer.wordpress.org/rest-api/reference/
+- aid: prometheus-fuels:prometheus-fuels-pages-api
+  name: Prometheus Fuels pages API
+  description: The pages API from Prometheus Fuels — 13 operation(s) for pages, including revisions and autosaves.
+  humanURL: https://prometheusfuels.ai/wp-json/
+  baseURL: https://prometheusfuels.ai/wp-json
+  tags:
+  - pages
+  properties:
+  - type: OpenAPI
+    url: openapi/prometheus-fuels-pages-api-openapi.yml
+  - type: Overlay
+    url: overlays/prometheus-fuels-pages-overlay.yaml
+  - type: Documentation
+    url: https://prometheusfuels.ai/wp-json/
+  - type: APIReference
+    url: https://developer.wordpress.org/rest-api/reference/
+- aid: prometheus-fuels:prometheus-fuels-posts-api
+  name: Prometheus Fuels posts API
+  description: The posts API from Prometheus Fuels — 13 operation(s) for posts, including revisions and autosaves.
+  humanURL: https://prometheusfuels.ai/wp-json/
+  baseURL: https://prometheusfuels.ai/wp-json
+  tags:
+  - posts
+  properties:
+  - type: OpenAPI
+    url: openapi/prometheus-fuels-posts-api-openapi.yml
+  - type: Overlay
+    url: overlays/prometheus-fuels-posts-overlay.yaml
+  - type: Documentation
+    url: https://prometheusfuels.ai/wp-json/
+  - type: APIReference
+    url: https://developer.wordpress.org/rest-api/reference/
+- aid: prometheus-fuels:prometheus-fuels-media-api
+  name: Prometheus Fuels media API
+  description: The media API from Prometheus Fuels — 9 operation(s) for the site's media library.
+  humanURL: https://prometheusfuels.ai/wp-json/
+  baseURL: https://prometheusfuels.ai/wp-json
+  tags:
+  - media
+  properties:
+  - type: OpenAPI
+    url: openapi/prometheus-fuels-media-api-openapi.yml
+  - type: Overlay
+    url: overlays/prometheus-fuels-media-overlay.yaml
+  - type: Documentation
+    url: https://prometheusfuels.ai/wp-json/
+  - type: APIReference
+    url: https://developer.wordpress.org/rest-api/reference/
+- aid: prometheus-fuels:prometheus-fuels-categories-api
+  name: Prometheus Fuels categories API
+  description: The categories API from Prometheus Fuels — 7 operation(s) for categories.
+  humanURL: https://prometheusfuels.ai/wp-json/
+  baseURL: https://prometheusfuels.ai/wp-json
+  tags:
+  - categories
+  properties:
+  - type: OpenAPI
+    url: openapi/prometheus-fuels-categories-api-openapi.yml
+  - type: Overlay
+    url: overlays/prometheus-fuels-categories-overlay.yaml
+  - type: Documentation
+    url: https://prometheusfuels.ai/wp-json/
+  - type: APIReference
+    url: https://developer.wordpress.org/rest-api/reference/
+- aid: prometheus-fuels:prometheus-fuels-tags-api
+  name: Prometheus Fuels tags API
+  description: The tags API from Prometheus Fuels — 7 operation(s) for tags.
+  humanURL: https://prometheusfuels.ai/wp-json/
+  baseURL: https://prometheusfuels.ai/wp-json
+  tags:
+  - tags
+  properties:
+  - type: OpenAPI
+    url: openapi/prometheus-fuels-tags-api-openapi.yml
+  - type: Overlay
+    url: overlays/prometheus-fuels-tags-overlay.yaml
+  - type: Documentation
+    url: https://prometheusfuels.ai/wp-json/
+  - type: APIReference
+    url: https://developer.wordpress.org/rest-api/reference/
+- aid: prometheus-fuels:prometheus-fuels-comments-api
+  name: Prometheus Fuels comments API
+  description: The comments API from Prometheus Fuels — 7 operation(s) for comments.
+  humanURL: https://prometheusfuels.ai/wp-json/
+  baseURL: https://prometheusfuels.ai/wp-json
+  tags:
+  - comments
+  properties:
+  - type: OpenAPI
+    url: openapi/prometheus-fuels-comments-api-openapi.yml
+  - type: Overlay
+    url: overlays/prometheus-fuels-comments-overlay.yaml
+  - type: Documentation
+    url: https://prometheusfuels.ai/wp-json/
+  - type: APIReference
+    url: https://developer.wordpress.org/rest-api/reference/
+- aid: prometheus-fuels:prometheus-fuels-users-api
+  name: Prometheus Fuels users API
+  description: >-
+    The users API from Prometheus Fuels — 21 operation(s) for users and application-password
+    management. The collection read is anonymous; everything else requires authentication.
+  humanURL: https://prometheusfuels.ai/wp-json/
+  baseURL: https://prometheusfuels.ai/wp-json
+  tags:
+  - users
+  properties:
+  - type: OpenAPI
+    url: openapi/prometheus-fuels-users-api-openapi.yml
+  - type: Overlay
+    url: overlays/prometheus-fuels-users-overlay.yaml
+  - type: Documentation
+    url: https://prometheusfuels.ai/wp-json/
+  - type: APIReference
+    url: https://developer.wordpress.org/rest-api/reference/
+- aid: prometheus-fuels:prometheus-fuels-search-api
+  name: Prometheus Fuels search API
+  description: The search API from Prometheus Fuels — 1 operation for cross-type site search.
+  humanURL: https://prometheusfuels.ai/wp-json/
+  baseURL: https://prometheusfuels.ai/wp-json
+  tags:
+  - search
+  properties:
+  - type: OpenAPI
+    url: openapi/prometheus-fuels-search-api-openapi.yml
+  - type: Overlay
+    url: overlays/prometheus-fuels-search-overlay.yaml
+  - type: Documentation
+    url: https://prometheusfuels.ai/wp-json/
+  - type: APIReference
+    url: https://developer.wordpress.org/rest-api/reference/
+- aid: prometheus-fuels:prometheus-fuels-taxonomies-api
+  name: Prometheus Fuels taxonomies API
+  description: The taxonomies API from Prometheus Fuels — 2 operation(s) describing the site's taxonomies.
+  humanURL: https://prometheusfuels.ai/wp-json/
+  baseURL: https://prometheusfuels.ai/wp-json
+  tags:
+  - taxonomies
+  properties:
+  - type: OpenAPI
+    url: openapi/prometheus-fuels-taxonomies-api-openapi.yml
+  - type: Overlay
+    url: overlays/prometheus-fuels-taxonomies-overlay.yaml
+  - type: Documentation
+    url: https://prometheusfuels.ai/wp-json/
+  - type: APIReference
+    url: https://developer.wordpress.org/rest-api/reference/
+- aid: prometheus-fuels:prometheus-fuels-types-api
+  name: Prometheus Fuels types API
+  description: The types API from Prometheus Fuels — 2 operation(s) describing the site's content types.
+  humanURL: https://prometheusfuels.ai/wp-json/
+  baseURL: https://prometheusfuels.ai/wp-json
+  tags:
+  - types
+  properties:
+  - type: OpenAPI
+    url: openapi/prometheus-fuels-types-api-openapi.yml
+  - type: Overlay
+    url: overlays/prometheus-fuels-types-overlay.yaml
+  - type: Documentation
+    url: https://prometheusfuels.ai/wp-json/
+  - type: APIReference
+    url: https://developer.wordpress.org/rest-api/reference/
+- aid: prometheus-fuels:prometheus-fuels-statuses-api
+  name: Prometheus Fuels statuses API
+  description: The statuses API from Prometheus Fuels — 2 operation(s) describing publication statuses.
+  humanURL: https://prometheusfuels.ai/wp-json/
+  baseURL: https://prometheusfuels.ai/wp-json
+  tags:
+  - statuses
+  properties:
+  - type: OpenAPI
+    url: openapi/prometheus-fuels-statuses-api-openapi.yml
+  - type: Overlay
+    url: overlays/prometheus-fuels-statuses-overlay.yaml
+  - type: Documentation
+    url: https://prometheusfuels.ai/wp-json/
+  - type: APIReference
+    url: https://developer.wordpress.org/rest-api/reference/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Authentication
+  url: authentication/prometheus-fuels-authentication.yml
+- type: Conventions
+  url: conventions/prometheus-fuels-conventions.yml
+- type: ErrorCatalog
+  url: errors/prometheus-fuels-problem-types.yml
+- type: DataModel
+  url: data-model/prometheus-fuels-data-model.yml
+- type: Lifecycle
+  url: lifecycle/prometheus-fuels-lifecycle.yml
+- type: Conformance
+  url: conformance/prometheus-fuels-conformance.yml
+- type: MCPServer
+  url: mcp/prometheus-fuels-mcp.yml
+- type: AgentSkill
+  url: skills/prometheus-fuels-browse-news-articles.md
+- type: AgentSkill
+  url: skills/prometheus-fuels-search-site-content.md
+- type: LLMsTxt
+  url: llms/prometheus-fuels-llms.txt
+- type: DomainSecurity
+  url: security/prometheus-fuels-domain-security.yml
 - type: Website
+  url: https://prometheusfuels.ai/
+- type: About
+  url: https://prometheusfuels.ai/about/
+- type: Technology
+  url: https://prometheusfuels.ai/technology/
+- type: GitHubOrganization
+  url: https://github.com/Prometheus-Fuels
+- type: LinkedIn
+  url: https://www.linkedin.com/company/prometheusfuels
+- type: Twitter
+  url: https://x.com/prometheusfuels
+- type: YouTube
+  url: https://www.youtube.com/@PrometheusFuels
+- type: SecondaryMarket
   url: https://forgeglobal.com/prometheus-fuels_stock/
+x-enrichment:
+  date: '2026-08-05'
+  status: enriched
+  artifacts_added: 37
+  pass: local-v1

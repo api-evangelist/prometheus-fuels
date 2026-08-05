@@ -1,0 +1,15 @@
+generated: '2026-08-05'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: prometheusfuels.ai
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 24 11:46:56 2026 GMT
+  hsts: null
+domains:
+- domain: prometheusfuels.ai
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false

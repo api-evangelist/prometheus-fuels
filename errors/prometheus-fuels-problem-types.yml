@@ -1,0 +1,93 @@
+generated: '2026-08-05'
+method: derived
+source: >-
+  openapi/prometheus-fuels-*-api-openapi.yml 4xx responses + error bodies observed live on
+  https://prometheusfuels.ai/wp-json/wp/v2 on 2026-08-05
+format: wordpress-rest-error
+rfc9457: false
+envelope:
+  media_type: application/json
+  note: >-
+    The WordPress REST API does not use RFC 9457 application/problem+json. Errors are returned as a
+    flat JSON object with a machine-readable `code`, a human-readable `message`, and a `data` object
+    that repeats the HTTP `status`. Codes are WordPress-namespaced (rest_no_route, rest_invalid_param,
+    rest_post_invalid_id, rest_forbidden, rest_cannot_view...). Every code below was observed on this
+    host or is declared on an operation in the derived OpenAPI; no error codes were invented.
+  shape:
+    code: string   # machine-readable error code
+    message: string   # human-readable error message
+    data:
+      status: integer   # repeated HTTP status code
+      params: object    # present on rest_invalid_param; per-parameter failure messages
+      details: object   # present on rest_invalid_param; per-parameter code/message/data
+problems:
+- status: 400
+  code: rest_invalid_param
+  title: Invalid request
+  meaning: One or more request parameters failed validation (wrong type, out-of-range, or unknown value).
+  remediation: >-
+    Check the parameter names, types, enum values and min/max bounds declared for the operation in the
+    OpenAPI. `data.details` names the offending parameter and the specific rule it broke.
+  observed: >-
+    GET /wp/v2/posts?per_page=9999 ->
+    {"code":"rest_invalid_param","message":"Invalid parameter(s): per_page","data":{"status":400,
+    "details":{"per_page":{"code":"rest_out_of_bounds","message":"per_page must be between 1 (inclusive)
+    and 100 (inclusive)"}}}}
+  applies_to: all operations with query parameters
+- status: 400
+  code: rest_out_of_bounds
+  title: Parameter out of bounds
+  meaning: A numeric parameter fell outside its declared minimum/maximum. Nested inside rest_invalid_param details.
+  remediation: Clamp the value to the range declared in the OpenAPI schema (e.g. per_page 1..100).
+  applies_to: collection operations
+- status: 401
+  code: rest_forbidden
+  title: Authentication required
+  meaning: >-
+    The request was not authenticated (or credentials were rejected) for an operation or context that
+    requires it. Write operations, the `edit` context, /wp/v2/settings and /wp-abilities/v1/abilities
+    require WordPress application passwords.
+  remediation: >-
+    Send HTTP Basic credentials from an application password issued at
+    https://prometheusfuels.ai/wp-admin/authorize-application.php
+  observed: >-
+    GET /wp/v2/settings ->
+    {"code":"rest_forbidden","message":"Sorry, you are not allowed to do that.","data":{"status":401}}
+  applies_to: write operations; edit context; settings and abilities routes
+- status: 401
+  code: rest_cannot_view
+  title: Not permitted to view
+  meaning: The caller lacks the capability required to read this collection.
+  remediation: Authenticate as a user whose WordPress role grants the capability.
+  observed: >-
+    GET /wp/v2/menus ->
+    {"code":"rest_cannot_view","message":"Sorry, you are not allowed to view menus.","data":{"status":401}}
+  applies_to: menus, themes (rest_cannot_view_themes), plugins (rest_cannot_view_plugins)
+- status: 403
+  code: rest_forbidden
+  title: Forbidden
+  meaning: The authenticated user lacks the capability required for this operation.
+  remediation: Use an account whose WordPress role grants the required capability.
+  applies_to: privileged read/write operations
+- status: 404
+  code: rest_no_route
+  title: No matching route
+  meaning: No route on this host matches the requested URL and HTTP method.
+  remediation: >-
+    Re-read the route index at https://prometheusfuels.ai/wp-json/wp/v2 and confirm the path and verb.
+  observed: >-
+    GET /wp/v2/nope ->
+    {"code":"rest_no_route","message":"No route was found matching the URL and request method.","data":{"status":404}}
+  applies_to: any path
+- status: 404
+  code: rest_post_invalid_id
+  title: Resource not found
+  meaning: The route exists but the addressed resource id does not.
+  remediation: List the collection first to obtain valid ids.
+  observed: >-
+    GET /wp/v2/posts/999999 ->
+    {"code":"rest_post_invalid_id","message":"Invalid post ID.","data":{"status":404}}
+  applies_to: '{id} operations'
+related:
+- conventions/prometheus-fuels-conventions.yml
+- openapi/prometheus-fuels-posts-api-openapi.yml

@@ -1,0 +1,158 @@
+generated: '2026-08-05'
+method: derived
+source: >-
+  openapi/prometheus-fuels-*-api-openapi.yml (derived from https://prometheusfuels.ai/wp-json/wp/v2)
+  + live response headers and error bodies observed on 2026-08-05
+scope: >-
+  Cross-cutting request/response semantics for the one machine-readable API surface Prometheus Fuels
+  operates: the WordPress REST API behind prometheusfuels.ai. Prometheus Fuels is a physical
+  electrofuels manufacturer and publishes no product API, so these conventions describe the corporate
+  site's content API only. Everything below was observed in the live route metadata or in live
+  responses; nothing is assumed from generic WordPress documentation that was not confirmed on this
+  host.
+authentication:
+  style: http-basic
+  scheme: WordPress application passwords
+  authorization_url: https://prometheusfuels.ai/wp-admin/authorize-application.php
+  anonymous_read: true
+  anonymous_read_verified:
+  - posts
+  - pages
+  - news-articles
+  - categories
+  - tags
+  - media
+  - comments
+  - users
+  - search
+  - taxonomies
+  - types
+  - statuses
+  authenticated_only_verified:
+  - settings
+  - menus
+  - themes
+  - plugins
+  - wp-abilities/v1/abilities
+  writes_require_auth: true
+  detail: authentication/prometheus-fuels-authentication.yml
+idempotency:
+  supported: false
+  note: >-
+    No idempotency key header or parameter is exposed by any route in the published route metadata,
+    and none was observed on any response. No Idempotency pointer is emitted for this provider.
+pagination:
+  style: page-number
+  parameters:
+  - name: page
+    in: query
+    default: 1
+    description: Current page of the collection.
+  - name: per_page
+    in: query
+    default: 10
+    maximum: 100
+    description: Maximum number of items to be returned in result set.
+  - name: offset
+    in: query
+    description: Offset the result set by a specific number of items (collection routes).
+  response_headers:
+  - name: X-WP-Total
+    description: Total number of items in the collection.
+  - name: X-WP-TotalPages
+    description: Total number of pages available at the current per_page size.
+  link_header: true
+  link_header_note: >-
+    RFC 8288 Link header carries rel="next" / rel="prev" on collection responses. Observed on
+    GET /wp/v2/news-articles?per_page=1 -> link:
+    <https://prometheusfuels.ai/wp-json/wp/v2/news-articles?per_page=1&page=2>; rel="next"
+  cors_note: >-
+    Access-Control-Expose-Headers advertises `X-WP-Total, X-WP-TotalPages, Link`, so browser clients
+    can read the pagination headers cross-origin.
+ordering:
+  parameters:
+  - name: order
+    values: [asc, desc]
+  - name: orderby
+    description: Per-resource sort attribute; allowed values are enumerated per route in the OpenAPI.
+filtering:
+  parameters:
+  - name: search
+    description: Limit results to those matching a string.
+  - name: include
+    description: Limit result set to specific IDs.
+  - name: exclude
+    description: Ensure result set excludes specific IDs.
+  - name: slug
+    description: Limit result set to items with one or more specific slugs.
+  - name: after
+    description: Limit response to items published after a given ISO 8601 date-time.
+  - name: before
+    description: Limit response to items published before a given ISO 8601 date-time.
+field_selection:
+  style: context-and-fields
+  parameters:
+  - name: context
+    values: [view, embed, edit]
+    default: view
+    description: Scope under which the request is made; determines which fields are present in the response.
+  - name: _fields
+    description: Sparse fieldset selection (WordPress core query parameter).
+  - name: _embed
+    description: Inline embedded resources (author, terms, featured media) via the _embedded envelope.
+hypermedia:
+  style: HAL-like
+  note: Responses carry a `_links` object and, when `_embed` is requested, an `_embedded` object.
+versioning:
+  scheme: namespace-in-path
+  current: wp/v2
+  base: https://prometheusfuels.ai/wp-json
+  discovery: https://prometheusfuels.ai/wp-json/
+  namespaces_advertised: 29
+  detail: lifecycle/prometheus-fuels-lifecycle.yml
+error_envelope:
+  media_type: application/json
+  format: wordpress-rest-error
+  rfc9457: false
+  shape:
+    code: Machine-readable error code, e.g. rest_no_route.
+    message: Human-readable error message.
+    data.status: Repeated HTTP status code.
+  observed_examples:
+  - request: GET /wp/v2/posts/999999
+    body: '{"code":"rest_post_invalid_id","message":"Invalid post ID.","data":{"status":404}}'
+  - request: GET /wp/v2/nope
+    body: '{"code":"rest_no_route","message":"No route was found matching the URL and request method.","data":{"status":404}}'
+  - request: GET /wp/v2/posts?per_page=9999
+    body: '{"code":"rest_invalid_param","message":"Invalid parameter(s): per_page","data":{"status":400}}'
+  detail: errors/prometheus-fuels-problem-types.yml
+rate_limits:
+  published: false
+  note: >-
+    No rate-limit policy is published for this host and no RateLimit/X-RateLimit headers were observed
+    on probed responses. Not asserted either way. robots.txt does declare `Crawl-delay: 10`, which is
+    a crawler courtesy directive, not an API rate limit.
+caching:
+  cache_control_observed: max-age=172800
+  vary: User-Agent
+  note: >-
+    Collection responses were served with Cache-Control: max-age=172800 and an Expires header,
+    together with `X-Robots-Tag: noindex` and `X-Content-Type-Options: nosniff`.
+request_tracing:
+  request_id_header: null
+  note: No provider-specific request-id header was observed on any probed response.
+content_negotiation:
+  request: application/json
+  response: application/json; charset=UTF-8
+  allowed_request_headers: >-
+    Access-Control-Allow-Headers advertises Authorization, X-WP-Nonce, Content-Disposition,
+    Content-MD5, Content-Type.
+  method_override_header: X-HTTP-Method-Override
+  method_override_note: >-
+    WordPress accepts POST with X-HTTP-Method-Override for PUT/PATCH/DELETE where clients cannot
+    issue those verbs.
+related:
+- authentication/prometheus-fuels-authentication.yml
+- errors/prometheus-fuels-problem-types.yml
+- lifecycle/prometheus-fuels-lifecycle.yml
+- data-model/prometheus-fuels-data-model.yml
