@@ -1,0 +1,3899 @@
+{
+  "item": [
+    {
+      "id": "70f04222-ac55-4681-a25d-bf3e9e0aecf8",
+      "name": "news-articles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c36dbda1-2380-4e40-bdec-b07c8c420033",
+          "name": "GET /wp/v2/news-articles",
+          "request": {
+            "name": "GET /wp/v2/news-articles",
+            "description": {},
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "news-articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Current page of the collection."
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Maximum number of items to be returned in result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Limit results to those matching a string."
+                },
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": "<dateTime>",
+                  "description": "Limit response to posts published after a given ISO8601 compliant date."
+                },
+                {
+                  "disabled": false,
+                  "key": "modified_after",
+                  "value": "<dateTime>",
+                  "description": "Limit response to posts modified after a given ISO8601 compliant date."
+                },
+                {
+                  "disabled": false,
+                  "key": "before",
+                  "value": "<dateTime>",
+                  "description": "Limit response to posts published before a given ISO8601 compliant date."
+                },
+                {
+                  "disabled": false,
+                  "key": "modified_before",
+                  "value": "<dateTime>",
+                  "description": "Limit response to posts modified before a given ISO8601 compliant date."
+                },
+                {
+                  "disabled": false,
+                  "key": "search_semantics",
+                  "value": "<string>",
+                  "description": "How to interpret the search input."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Offset the result set by a specific number of items."
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "desc",
+                  "description": "Order sort attribute ascending or descending."
+                },
+                {
+                  "disabled": false,
+                  "key": "orderby",
+                  "value": "date",
+                  "description": "Sort collection by post attribute."
+                },
+                {
+                  "disabled": false,
+                  "key": "slug",
+                  "value": "<string>",
+                  "description": "Limit result set to posts with one or more specific slugs."
+                },
+                {
+                  "disabled": false,
+                  "key": "slug",
+                  "value": "<string>",
+                  "description": "Limit result set to posts with one or more specific slugs."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "publish",
+                  "description": "Limit result set to posts assigned one or more statuses."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf9ecf5d-d477-48f3-945d-06c8625ca60f",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "search_semantics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "date"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "publish"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47717a6d-6c56-4a7a-91f3-2140bb57b90f",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "search_semantics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "date"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "publish"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9f5eb6b2-cc70-4b00-98d4-3bd99b220991",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "search_semantics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "date"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "publish"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9b37263-7502-4423-8c13-0ca8ef52671a",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "search_semantics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "date"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "publish"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d5e5373-aa2b-4368-bb0f-d496e8985d54",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "search_semantics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "date"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "publish"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b99a137-2e11-4707-8ea1-3a6efb0fa3d4",
+          "name": "POST /wp/v2/news-articles",
+          "request": {
+            "name": "POST /wp/v2/news-articles",
+            "description": {},
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "news-articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "98a185aa-711e-46da-97db-e7823af5528f",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ff2680b-a30f-4982-a8c0-27b2ed14d02f",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6209bd1f-889a-4eeb-8b16-e93c62fba26e",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "992d5bee-5a24-4474-ba5c-30e10a196809",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ede65d97-9b2f-4f13-a0ee-2a8df10af0a3",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ccacb37b-b8cd-4b94-b6c2-8d357ef6d9b2",
+          "name": "GET /wp/v2/news-articles/{id}",
+          "request": {
+            "name": "GET /wp/v2/news-articles/{id}",
+            "description": {},
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "news-articles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                },
+                {
+                  "disabled": false,
+                  "key": "excerpt_length",
+                  "value": "<integer>",
+                  "description": "Override the default excerpt length."
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "The password for the post if it is password protected."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6a01eab-a261-4e1a-a069-615e7149acdd",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "excerpt_length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5aa121c3-fa7f-4ea2-a7b6-3f86c229cef8",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "excerpt_length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "747295a8-b7c8-4a25-88c4-58b59110adc0",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "excerpt_length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "85dff5c9-f82b-4427-8534-2d5820ec6ae7",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "excerpt_length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "76c429ec-69ea-4604-a84a-e91c6b5bc07c",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "excerpt_length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8049391b-246a-4125-a4a0-e9194ebc3132",
+          "name": "POST /wp/v2/news-articles/{id}",
+          "request": {
+            "name": "POST /wp/v2/news-articles/{id}",
+            "description": {},
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "news-articles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "423a732a-92c2-4967-a590-2ac89232e4b2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2c0879ff-4c36-4b9b-8fb7-c9d6fb5d7fb2",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "03c3872c-11af-4fd4-b8d7-97478c63e9a5",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13a4be7c-4bba-48e8-9241-8a3c2e94d71f",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "560ed035-8563-4844-aeab-c26a2b5158df",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b64679b-e8da-4f79-872b-db61c4dc09a6",
+          "name": "PUT /wp/v2/news-articles/{id}",
+          "request": {
+            "name": "PUT /wp/v2/news-articles/{id}",
+            "description": {},
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "news-articles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "688d2683-c1ff-464d-83a6-ffe8388f6a62",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a097c293-48a1-4971-896a-8bc464aeea93",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d2a6bd7d-8d8d-4640-8135-ad34cf7541c1",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "df390c7d-c5a4-450a-93db-51ee6dbca997",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7280fe10-5c51-41b6-a5a6-d2e2c96b9bdc",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "755ba8a3-d780-49d3-b9c0-7c5959acf23f",
+          "name": "PATCH /wp/v2/news-articles/{id}",
+          "request": {
+            "name": "PATCH /wp/v2/news-articles/{id}",
+            "description": {},
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "news-articles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "232ea388-c9ee-40b0-910d-336c29c3d478",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4667e176-30bc-451b-a922-53cadd424e38",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2943388e-2ad7-4ad3-9f52-f884134f6be2",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a272e007-5ced-44cb-9a1a-1f2d1c41c9d7",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ccdbe8e9-8e8d-489e-87e5-4b7710085c00",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1bf84e57-f326-45f1-83b1-f82d6e4cecea",
+          "name": "DELETE /wp/v2/news-articles/{id}",
+          "request": {
+            "name": "DELETE /wp/v2/news-articles/{id}",
+            "description": {},
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "news-articles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "force",
+                  "value": "false",
+                  "description": "Whether to bypass Trash and force deletion."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "15d93a4f-9c71-4455-8aff-86aaba212421",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "force",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7f1c490a-0b92-4f92-973b-79cf55fade2b",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "force",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37db62b2-c11b-42a5-bdbc-dba36e7c83bd",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "force",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f1bcb84-f7a4-40cd-84ab-617f57e4076e",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "force",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1811ada-fe1b-4cd8-b9b9-f97f26476e35",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "force",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19ad7303-8985-4da1-aacb-39e07e58bf7d",
+          "name": "GET /wp/v2/news-articles/{id}/autosaves",
+          "request": {
+            "name": "GET /wp/v2/news-articles/{id}/autosaves",
+            "description": {},
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "news-articles",
+                ":id",
+                "autosaves"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parent",
+                  "value": "<integer>",
+                  "description": "The ID for the parent of the autosave."
+                },
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d10e0193-df07-4f98-9565-74fd30813a70",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id",
+                    "autosaves"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parent",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "456302fb-1634-4061-ac95-1dd9de69886e",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id",
+                    "autosaves"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parent",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eec3cffc-ddef-4631-8b18-55ab1e1b3665",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id",
+                    "autosaves"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parent",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "86f12586-1f73-459f-a806-8bd740e89336",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id",
+                    "autosaves"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parent",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9f62b49b-b650-4be4-bcca-5688aaaf4de2",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id",
+                    "autosaves"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parent",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a4999cde-1cc4-460d-8ed4-16116570a9df",
+          "name": "POST /wp/v2/news-articles/{id}/autosaves",
+          "request": {
+            "name": "POST /wp/v2/news-articles/{id}/autosaves",
+            "description": {},
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "news-articles",
+                ":id",
+                "autosaves"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"parent\": \"<integer>\",\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7de07348-0ae6-4aba-a3f8-c53c6f247fff",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id",
+                    "autosaves"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"parent\": \"<integer>\",\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "187c8d87-b96a-4000-9851-9790167c3932",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id",
+                    "autosaves"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"parent\": \"<integer>\",\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd29f646-521b-438c-8ef6-5674ce1772da",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id",
+                    "autosaves"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"parent\": \"<integer>\",\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "469f000e-b1e4-4849-9ec2-d79993157056",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id",
+                    "autosaves"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"parent\": \"<integer>\",\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3ea5b571-9a5c-4844-a5bd-9421a76eb199",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":id",
+                    "autosaves"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"parent\": \"<integer>\",\n  \"date\": \"<dateTime>\",\n  \"date_gmt\": \"<dateTime>\",\n  \"slug\": \"<string>\",\n  \"status\": \"<string>\",\n  \"password\": \"<string>\",\n  \"title\": \"<object>\",\n  \"content\": \"<object>\",\n  \"excerpt\": \"<object>\",\n  \"template\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2af25037-b2e3-4de3-a2db-ea1e221a01d9",
+          "name": "GET /wp/v2/news-articles/{parent}/autosaves/{id}",
+          "request": {
+            "name": "GET /wp/v2/news-articles/{parent}/autosaves/{id}",
+            "description": {},
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "news-articles",
+                ":parent",
+                "autosaves",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "parent",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "802c0a0d-f3ca-43a6-a6eb-9a5c4efa09f6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":parent",
+                    "autosaves",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "parent",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e2b88f29-ace0-4a91-85d6-18a1f9e15430",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":parent",
+                    "autosaves",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "parent",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "53c861ee-b75f-450c-8d5b-4407187325ea",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":parent",
+                    "autosaves",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "parent",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82488c27-ce24-406c-8792-c4c9c4ca93ff",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":parent",
+                    "autosaves",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "parent",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a65f1255-7dda-45e2-9cbc-1152ca34e370",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "news-articles",
+                    ":parent",
+                    "autosaves",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "parent",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 1832\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://prometheusfuels.ai/wp-json",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1c9f9ea5-82ee-4ac0-87e1-714ae6e8dfb5",
+    "name": "Prometheus Fuels Website Content API (WordPress REST API) News Articles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace. Read operations on posts, pages, the site's `news-articles` custom post type, categories, tags, users, media, comments, search, taxonomies, types and statuses were verified to respond anonymously on 2026-08-05; write operations require authentication via WordPress application passwords (authorization endpoint https://prometheusfuels.ai/wp-admin/authorize-application.php). This is site infrastructure, not a Prometheus Fuels product API — the company publishes no developer portal or first-party API. This document was derived by the API Evangelist enrichment pipeline from the route metadata the server itself publishes at https://prometheusfuels.ai/wp-json/wp/v2 — no operations, parameters or schemas were invented.\n\nContact Support:\n Name: Prometheus Fuels\n Email: info@prometheusfuels.com",
+      "type": "text/plain"
+    }
+  }
+}

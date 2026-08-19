@@ -1,0 +1,413 @@
+{
+  "item": [
+    {
+      "id": "03c80543-1022-4d1c-8bd4-f12a8734c400",
+      "name": "search",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0c61858b-62d4-4617-8934-f7bca4cc14f3",
+          "name": "GET /wp/v2/search",
+          "request": {
+            "name": "GET /wp/v2/search",
+            "description": {},
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Current page of the collection."
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Maximum number of items to be returned in result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Limit results to those matching a string."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "post",
+                  "description": "Limit results to items of an object type."
+                },
+                {
+                  "disabled": false,
+                  "key": "subtype",
+                  "value": "any",
+                  "description": "Limit results to items of one or more object subtypes."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74a8a1f9-9d35-4346-9f41-79794f06a094",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "post"
+                    },
+                    {
+                      "key": "subtype",
+                      "value": "any"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6fb3e419-9b71-498d-b4f6-57e824223cfd",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "post"
+                    },
+                    {
+                      "key": "subtype",
+                      "value": "any"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9631\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4772a00c-b527-4530-ae8b-48025aa2f65f",
+              "name": "Authentication required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "post"
+                    },
+                    {
+                      "key": "subtype",
+                      "value": "any"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9631\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "08f73192-c7b4-4d60-8a59-22c22c7cab79",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "post"
+                    },
+                    {
+                      "key": "subtype",
+                      "value": "any"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9631\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "55ce2d21-9cde-4857-9050-7fa3243c62c0",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "post"
+                    },
+                    {
+                      "key": "subtype",
+                      "value": "any"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9631\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://prometheusfuels.ai/wp-json",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5c79f286-b5c9-487d-be73-c35be70011ee",
+    "name": "Prometheus Fuels Website Content API (WordPress REST API) Search API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace. Read operations on posts, pages, the site's `news-articles` custom post type, categories, tags, users, media, comments, search, taxonomies, types and statuses were verified to respond anonymously on 2026-08-05; write operations require authentication via WordPress application passwords (authorization endpoint https://prometheusfuels.ai/wp-admin/authorize-application.php). This is site infrastructure, not a Prometheus Fuels product API — the company publishes no developer portal or first-party API. This document was derived by the API Evangelist enrichment pipeline from the route metadata the server itself publishes at https://prometheusfuels.ai/wp-json/wp/v2 — no operations, parameters or schemas were invented.\n\nContact Support:\n Name: Prometheus Fuels\n Email: info@prometheusfuels.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -5,14 +5,19 @@ source: openapi/prometheus-fuels-*-api-openapi.yml
 searched:
   result: none
   evidence:
-  - {url: 'https://prometheusfuels.ai/wp-json/', status: 200, note: '29 namespaces advertised; none is `mcp`'}
-  - {url: 'https://prometheusfuels.ai/wp-json/mcp', status: 404, note: 'rest_no_route — no WordPress MCP Adapter installed'}
-  - {url: 'https://prometheusfuels.ai/wp-json/wp-abilities/v1', status: 200, note: 'Abilities namespace present, but /abilities is 401 rest_forbidden'}
-  note: >-
-    Prometheus Fuels operates no hosted or remote MCP server, and none is published in any registry
+  - url: https://prometheusfuels.ai/wp-json/
+    status: 200
+    note: 29 namespaces advertised; none is `mcp`
+  - url: https://prometheusfuels.ai/wp-json/mcp
+    status: 404
+    note: rest_no_route — no WordPress MCP Adapter installed
+  - url: https://prometheusfuels.ai/wp-json/wp-abilities/v1
+    status: 200
+    note: Abilities namespace present, but /abilities is 401 rest_forbidden
+  note: Prometheus Fuels operates no hosted or remote MCP server, and none is published in any registry
     under its name. The tools below are a CANDIDATE list derived from the anonymous read operations of
-    the site's WordPress REST API — they are what an MCP server over this surface would expose. They
-    are not offered by Prometheus Fuels and no endpoint is asserted.
+    the site's WordPress REST API — they are what an MCP server over this surface would expose. They are
+    not offered by Prometheus Fuels and no endpoint is asserted.
 server:
   name: prometheus-fuels-site-content
   transport: http
@@ -49,9 +54,14 @@ tools:
 - name: list_types
   description: List registered content types, including the site-specific news-articles type.
   source_operation: openapi/prometheus-fuels-types-api-openapi.yml#listWpV2Types
-tools_note: >-
-  Only anonymous read operations are proposed. Write operations exist on the same routes but require
-  WordPress application passwords and are deliberately excluded from a candidate tool list.
+tools_note: Only anonymous read operations are proposed. Write operations exist on the same routes but
+  require WordPress application passwords and are deliberately excluded from a candidate tool list.
 related:
 - openapi/prometheus-fuels-news-articles-api-openapi.yml
 - conventions/prometheus-fuels-conventions.yml
+deployment:
+  mode: none
+  verified: derived
+  tools: 10
+  checked: '2026-08-12'
+  source: catalog MCP census

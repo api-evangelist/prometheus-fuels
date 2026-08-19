@@ -1,0 +1,50 @@
+{
+  "provider": "prometheus-fuels",
+  "sources": [
+    "prometheus-fuels-categories-api-openapi.yml",
+    "prometheus-fuels-comments-api-openapi.yml",
+    "prometheus-fuels-media-api-openapi.yml",
+    "prometheus-fuels-news-articles-api-openapi.yml",
+    "prometheus-fuels-pages-api-openapi.yml",
+    "prometheus-fuels-posts-api-openapi.yml",
+    "prometheus-fuels-search-api-openapi.yml",
+    "prometheus-fuels-statuses-api-openapi.yml",
+    "prometheus-fuels-tags-api-openapi.yml",
+    "prometheus-fuels-taxonomies-api-openapi.yml",
+    "prometheus-fuels-types-api-openapi.yml",
+    "prometheus-fuels-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "prometheus-fuels-categories-api-openapi.yml",
+    "prometheus-fuels-comments-api-openapi.yml",
+    "prometheus-fuels-media-api-openapi.yml",
+    "prometheus-fuels-news-articles-api-openapi.yml",
+    "prometheus-fuels-pages-api-openapi.yml",
+    "prometheus-fuels-posts-api-openapi.yml",
+    "prometheus-fuels-search-api-openapi.yml",
+    "prometheus-fuels-statuses-api-openapi.yml",
+    "prometheus-fuels-tags-api-openapi.yml",
+    "prometheus-fuels-taxonomies-api-openapi.yml",
+    "prometheus-fuels-types-api-openapi.yml",
+    "prometheus-fuels-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "prometheus-fuels-categories-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "prometheus-fuels-comments-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "prometheus-fuels-media-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "prometheus-fuels-news-articles-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "prometheus-fuels-pages-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "prometheus-fuels-posts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "prometheus-fuels-search-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "prometheus-fuels-statuses-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "prometheus-fuels-tags-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "prometheus-fuels-taxonomies-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "prometheus-fuels-types-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "prometheus-fuels-users-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": []
+}

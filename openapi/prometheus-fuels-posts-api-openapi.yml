@@ -1,12 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Prometheus Fuels Website Content API (WordPress REST API) posts API
+  title: Prometheus Fuels Website Content API (WordPress REST API) Posts API
   version: wp/v2
-  description: Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace. Read operations on posts, pages, the site's `news-articles`
-    custom post type, categories, tags, users, media, comments, search, taxonomies, types and statuses were verified to respond anonymously on 2026-08-05; write operations require authentication via WordPress
-    application passwords (authorization endpoint https://prometheusfuels.ai/wp-admin/authorize-application.php). This is site infrastructure, not a Prometheus Fuels product API — the company publishes
-    no developer portal or first-party API. This document was derived by the API Evangelist enrichment pipeline from the route metadata the server itself publishes at https://prometheusfuels.ai/wp-json/wp/v2
-    — no operations, parameters or schemas were invented.
+  description: Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace. Read operations on posts, pages, the site's `news-articles` custom post type, categories, tags, users, media, comments, search, taxonomies, types and statuses were verified to respond anonymously on 2026-08-05; write operations require authentication via WordPress application passwords (authorization endpoint https://prometheusfuels.ai/wp-admin/authorize-application.php). This is site infrastructure, not a Prometheus Fuels product API — the company publishes no developer portal or first-party API. This document was derived by the API Evangelist enrichment pipeline from the route metadata the server itself publishes at https://prometheusfuels.ai/wp-json/wp/v2 — no operations, parameters or schemas were invented.
   contact:
     name: Prometheus Fuels
     email: info@prometheusfuels.com
@@ -25,31 +21,31 @@ paths:
       tags:
       - posts
       responses:
-        '200': &id001
+        '200':
           description: Successful response
           content:
             application/json:
               schema:
                 type: object
-        '400': &id002
+        '400':
           description: Invalid request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        '401': &id003
+        '401':
           description: Authentication required
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        '403': &id004
+        '403':
           description: Forbidden
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        '404': &id005
+        '404':
           description: Not found
           content:
             application/json:
@@ -312,11 +308,36 @@ paths:
       tags:
       - posts
       responses:
-        '200': *id001
-        '400': *id002
-        '401': *id003
-        '403': *id004
-        '404': *id005
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       security:
       - applicationPassword: []
       requestBody:
@@ -417,11 +438,36 @@ paths:
       tags:
       - posts
       responses:
-        '200': *id001
-        '400': *id002
-        '401': *id003
-        '403': *id004
-        '404': *id005
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       parameters:
       - name: id
         in: path
@@ -457,11 +503,36 @@ paths:
       tags:
       - posts
       responses:
-        '200': *id001
-        '400': *id002
-        '401': *id003
-        '403': *id004
-        '404': *id005
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       security:
       - applicationPassword: []
       requestBody:
@@ -484,7 +555,7 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: &id006
+                  enum:
                   - publish
                   - future
                   - draft
@@ -512,19 +583,19 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: &id007
+                  enum:
                   - open
                   - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: &id008
+                  enum:
                   - open
                   - closed
                   description: Whether or not the post can be pinged.
                 format:
                   type: string
-                  enum: &id009
+                  enum:
                   - standard
                   - aside
                   - chat
@@ -567,11 +638,36 @@ paths:
       tags:
       - posts
       responses:
-        '200': *id001
-        '400': *id002
-        '401': *id003
-        '403': *id004
-        '404': *id005
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       security:
       - applicationPassword: []
       requestBody:
@@ -594,7 +690,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id006
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -616,15 +718,29 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: *id007
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: *id008
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not the post can be pinged.
                 format:
                   type: string
-                  enum: *id009
+                  enum:
+                  - standard
+                  - aside
+                  - chat
+                  - gallery
+                  - link
+                  - image
+                  - quote
+                  - status
+                  - video
+                  - audio
                   description: The format for the post.
                 meta:
                   type: object
@@ -657,11 +773,36 @@ paths:
       tags:
       - posts
       responses:
-        '200': *id001
-        '400': *id002
-        '401': *id003
-        '403': *id004
-        '404': *id005
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       security:
       - applicationPassword: []
       requestBody:
@@ -684,7 +825,13 @@ paths:
                   description: An alphanumeric identifier for the post unique to its type.
                 status:
                   type: string
-                  enum: *id006
+                  enum:
+                  - publish
+                  - future
+                  - draft
+                  - pending
+                  - private
+                  - acf-disabled
                   description: A named status for the post.
                 password:
                   type: string
@@ -706,15 +853,29 @@ paths:
                   description: The ID of the featured media for the post.
                 comment_status:
                   type: string
-                  enum: *id007
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not comments are open on the post.
                 ping_status:
                   type: string
-                  enum: *id008
+                  enum:
+                  - open
+                  - closed
                   description: Whether or not the post can be pinged.
                 format:
                   type: string
-                  enum: *id009
+                  enum:
+                  - standard
+                  - aside
+                  - chat
+                  - gallery
+                  - link
+                  - image
+                  - quote
+                  - status
+                  - video
+                  - audio
                   description: The format for the post.
                 meta:
                   type: object
@@ -747,11 +908,36 @@ paths:
       tags:
       - posts
       responses:
-        '200': *id001
-        '400': *id002
-        '401': *id003
-        '403': *id004
-        '404': *id005
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       security:
       - applicationPassword: []
       parameters:
@@ -774,11 +960,36 @@ paths:
       tags:
       - posts
       responses:
-        '200': *id001
-        '400': *id002
-        '401': *id003
-        '403': *id004
-        '404': *id005
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       parameters:
       - name: id
         in: path
@@ -808,11 +1019,36 @@ paths:
       tags:
       - posts
       responses:
-        '200': *id001
-        '400': *id002
-        '401': *id003
-        '403': *id004
-        '404': *id005
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       security:
       - applicationPassword: []
       requestBody:
@@ -922,11 +1158,36 @@ paths:
       tags:
       - posts
       responses:
-        '200': *id001
-        '400': *id002
-        '401': *id003
-        '403': *id004
-        '404': *id005
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       parameters:
       - name: parent
         in: path
@@ -956,11 +1217,36 @@ paths:
       tags:
       - posts
       responses:
-        '200': *id001
-        '400': *id002
-        '401': *id003
-        '403': *id004
-        '404': *id005
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       parameters:
       - name: parent
         in: path
@@ -1056,11 +1342,36 @@ paths:
       tags:
       - posts
       responses:
-        '200': *id001
-        '400': *id002
-        '401': *id003
-        '403': *id004
-        '404': *id005
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       parameters:
       - name: parent
         in: path
@@ -1089,11 +1400,36 @@ paths:
       tags:
       - posts
       responses:
-        '200': *id001
-        '400': *id002
-        '401': *id003
-        '403': *id004
-        '404': *id005
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
       security:
       - applicationPassword: []
       parameters:
@@ -1137,5 +1473,4 @@ components:
     applicationPassword:
       type: http
       scheme: basic
-      description: WordPress application passwords. The live discovery document at https://prometheusfuels.ai/wp-json/ advertises `authentication.application-passwords.endpoints.authorization` = https://prometheusfuels.ai/wp-admin/authorize-application.php.
-        Anonymous requests are accepted for the public read operations; write operations and the `edit` context require these credentials.
+      description: WordPress application passwords. The live discovery document at https://prometheusfuels.ai/wp-json/ advertises `authentication.application-passwords.endpoints.authorization` = https://prometheusfuels.ai/wp-admin/authorize-application.php. Anonymous requests are accepted for the public read operations; write operations and the `edit` context require these credentials.

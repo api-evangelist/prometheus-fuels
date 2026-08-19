@@ -1,12 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Prometheus Fuels Website Content API (WordPress REST API) search API
+  title: Prometheus Fuels Website Content API (WordPress REST API) Search API
   version: wp/v2
-  description: Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace. Read operations on posts, pages, the site's `news-articles`
-    custom post type, categories, tags, users, media, comments, search, taxonomies, types and statuses were verified to respond anonymously on 2026-08-05; write operations require authentication via WordPress
-    application passwords (authorization endpoint https://prometheusfuels.ai/wp-admin/authorize-application.php). This is site infrastructure, not a Prometheus Fuels product API — the company publishes
-    no developer portal or first-party API. This document was derived by the API Evangelist enrichment pipeline from the route metadata the server itself publishes at https://prometheusfuels.ai/wp-json/wp/v2
-    — no operations, parameters or schemas were invented.
+  description: Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace. Read operations on posts, pages, the site's `news-articles` custom post type, categories, tags, users, media, comments, search, taxonomies, types and statuses were verified to respond anonymously on 2026-08-05; write operations require authentication via WordPress application passwords (authorization endpoint https://prometheusfuels.ai/wp-admin/authorize-application.php). This is site infrastructure, not a Prometheus Fuels product API — the company publishes no developer portal or first-party API. This document was derived by the API Evangelist enrichment pipeline from the route metadata the server itself publishes at https://prometheusfuels.ai/wp-json/wp/v2 — no operations, parameters or schemas were invented.
   contact:
     name: Prometheus Fuels
     email: info@prometheusfuels.com
@@ -161,5 +157,4 @@ components:
     applicationPassword:
       type: http
       scheme: basic
-      description: WordPress application passwords. The live discovery document at https://prometheusfuels.ai/wp-json/ advertises `authentication.application-passwords.endpoints.authorization` = https://prometheusfuels.ai/wp-admin/authorize-application.php.
-        Anonymous requests are accepted for the public read operations; write operations and the `edit` context require these credentials.
+      description: WordPress application passwords. The live discovery document at https://prometheusfuels.ai/wp-json/ advertises `authentication.application-passwords.endpoints.authorization` = https://prometheusfuels.ai/wp-admin/authorize-application.php. Anonymous requests are accepted for the public read operations; write operations and the `edit` context require these credentials.
