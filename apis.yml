@@ -1,5 +1,16 @@
 aid: prometheus-fuels
 name: Prometheus Fuels
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 image: https://prometheusfuels.ai/wp-content/uploads/2026/03/logo_favicon-300x300.png
 description: >-
   Prometheus Fuels is a Santa Cruz, California energy company founded in 2019 by Rob McGinnis and
