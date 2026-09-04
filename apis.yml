@@ -11,6 +11,19 @@ deliveryModel:
   - openapi
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  - security
+  generated: '2026-09-03'
+  method: derived
 image: https://prometheusfuels.ai/wp-content/uploads/2026/03/logo_favicon-300x300.png
 description: >-
   Prometheus Fuels is a Santa Cruz, California energy company founded in 2019 by Rob McGinnis and
@@ -291,8 +304,9 @@ common:
   url: lifecycle/prometheus-fuels-lifecycle.yml
 - type: Conformance
   url: conformance/prometheus-fuels-conformance.yml
-- type: MCPServer
+- type: X-MCPServerCandidate
   url: mcp/prometheus-fuels-mcp.yml
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
 - type: AgentSkill
   url: skills/prometheus-fuels-browse-news-articles.md
 - type: AgentSkill
