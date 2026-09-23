@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  title: Prometheus Fuels Website Content API (WordPress REST API) Categories API
+  title: Prometheus Fuels Website Content API (WordPress REST API)……
   version: wp/v2
-  description: Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace. Read operations on posts, pages, the site's `news-articles` custom post type, categories, tags, users, media, comments, search, taxonomies, types and statuses were verified to respond anonymously on 2026-08-05; write operations require authentication via WordPress application passwords (authorization endpoint https://prometheusfuels.ai/wp-admin/authorize-application.php). This is site infrastructure, not a Prometheus Fuels product API — the company publishes no developer portal or first-party API. This document was derived by the API Evangelist enrichment pipeline from the route metadata the server itself publishes at https://prometheusfuels.ai/wp-json/wp/v2 — no operations, parameters or schemas were invented.
+  description: Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace.
   contact:
     name: Prometheus Fuels
     email: info@prometheusfuels.com
@@ -12,14 +12,14 @@ servers:
   description: Prometheus Fuels WordPress REST API
 security: []
 tags:
-- name: categories
+- name: Categories
 paths:
   /wp/v2/categories:
     get:
       operationId: listWpV2Categories
       summary: GET /wp/v2/categories
       tags:
-      - categories
+      - Categories
       responses:
         '200':
           description: Successful response
@@ -161,7 +161,7 @@ paths:
       operationId: createWpV2Categories
       summary: POST /wp/v2/categories
       tags:
-      - categories
+      - Categories
       responses:
         '200':
           description: Successful response
@@ -222,7 +222,7 @@ paths:
       operationId: getWpV2CategoriesById
       summary: GET /wp/v2/categories/{id}
       tags:
-      - categories
+      - Categories
       responses:
         '200':
           description: Successful response
@@ -275,7 +275,7 @@ paths:
       operationId: createWpV2CategoriesById
       summary: POST /wp/v2/categories/{id}
       tags:
-      - categories
+      - Categories
       responses:
         '200':
           description: Successful response
@@ -341,7 +341,7 @@ paths:
       operationId: replaceWpV2CategoriesById
       summary: PUT /wp/v2/categories/{id}
       tags:
-      - categories
+      - Categories
       responses:
         '200':
           description: Successful response
@@ -407,7 +407,7 @@ paths:
       operationId: updateWpV2CategoriesById
       summary: PATCH /wp/v2/categories/{id}
       tags:
-      - categories
+      - Categories
       responses:
         '200':
           description: Successful response
@@ -473,7 +473,7 @@ paths:
       operationId: deleteWpV2CategoriesById
       summary: DELETE /wp/v2/categories/{id}
       tags:
-      - categories
+      - Categories
       responses:
         '200':
           description: Successful response

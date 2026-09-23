@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  title: Prometheus Fuels Website Content API (WordPress REST API) Pages API
+  title: Prometheus Fuels Website Content API (WordPress REST API)……
   version: wp/v2
-  description: Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace. Read operations on posts, pages, the site's `news-articles` custom post type, categories, tags, users, media, comments, search, taxonomies, types and statuses were verified to respond anonymously on 2026-08-05; write operations require authentication via WordPress application passwords (authorization endpoint https://prometheusfuels.ai/wp-admin/authorize-application.php). This is site infrastructure, not a Prometheus Fuels product API — the company publishes no developer portal or first-party API. This document was derived by the API Evangelist enrichment pipeline from the route metadata the server itself publishes at https://prometheusfuels.ai/wp-json/wp/v2 — no operations, parameters or schemas were invented.
+  description: Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace.
   contact:
     name: Prometheus Fuels
     email: info@prometheusfuels.com
@@ -12,14 +12,14 @@ servers:
   description: Prometheus Fuels WordPress REST API
 security: []
 tags:
-- name: pages
+- name: Pages
 paths:
   /wp/v2/pages:
     get:
       operationId: listWpV2Pages
       summary: GET /wp/v2/pages
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response
@@ -266,7 +266,7 @@ paths:
       operationId: createWpV2Pages
       summary: POST /wp/v2/pages
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response
@@ -375,7 +375,7 @@ paths:
       operationId: getWpV2PagesById
       summary: GET /wp/v2/pages/{id}
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response
@@ -440,7 +440,7 @@ paths:
       operationId: createWpV2PagesById
       summary: POST /wp/v2/pages/{id}
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response
@@ -554,7 +554,7 @@ paths:
       operationId: replaceWpV2PagesById
       summary: PUT /wp/v2/pages/{id}
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response
@@ -668,7 +668,7 @@ paths:
       operationId: updateWpV2PagesById
       summary: PATCH /wp/v2/pages/{id}
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response
@@ -782,7 +782,7 @@ paths:
       operationId: deleteWpV2PagesById
       summary: DELETE /wp/v2/pages/{id}
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response
@@ -834,7 +834,7 @@ paths:
       operationId: listWpV2PagesByIdAutosaves
       summary: GET /wp/v2/pages/{id}/autosaves
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response
@@ -893,7 +893,7 @@ paths:
       operationId: createWpV2PagesByIdAutosaves
       summary: POST /wp/v2/pages/{id}/autosaves
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response
@@ -1008,7 +1008,7 @@ paths:
       operationId: getWpV2PagesByParentAutosavesById
       summary: GET /wp/v2/pages/{parent}/autosaves/{id}
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response
@@ -1067,7 +1067,7 @@ paths:
       operationId: listWpV2PagesByParentRevisions
       summary: GET /wp/v2/pages/{parent}/revisions
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response
@@ -1192,7 +1192,7 @@ paths:
       operationId: getWpV2PagesByParentRevisionsById
       summary: GET /wp/v2/pages/{parent}/revisions/{id}
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response
@@ -1250,7 +1250,7 @@ paths:
       operationId: deleteWpV2PagesByParentRevisionsById
       summary: DELETE /wp/v2/pages/{parent}/revisions/{id}
       tags:
-      - pages
+      - Pages
       responses:
         '200':
           description: Successful response

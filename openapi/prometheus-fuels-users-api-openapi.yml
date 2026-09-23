@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  title: Prometheus Fuels Website Content API (WordPress REST API) Users API
+  title: Prometheus Fuels Website Content API (WordPress REST API)……
   version: wp/v2
-  description: Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace. Read operations on posts, pages, the site's `news-articles` custom post type, categories, tags, users, media, comments, search, taxonomies, types and statuses were verified to respond anonymously on 2026-08-05; write operations require authentication via WordPress application passwords (authorization endpoint https://prometheusfuels.ai/wp-admin/authorize-application.php). This is site infrastructure, not a Prometheus Fuels product API — the company publishes no developer portal or first-party API. This document was derived by the API Evangelist enrichment pipeline from the route metadata the server itself publishes at https://prometheusfuels.ai/wp-json/wp/v2 — no operations, parameters or schemas were invented.
+  description: Public content API for the Prometheus Fuels corporate website (prometheusfuels.ai), served by the WordPress REST API `wp/v2` namespace.
   contact:
     name: Prometheus Fuels
     email: info@prometheusfuels.com
@@ -12,14 +12,14 @@ servers:
   description: Prometheus Fuels WordPress REST API
 security: []
 tags:
-- name: users
+- name: Users
 paths:
   /wp/v2/users:
     get:
       operationId: listWpV2Users
       summary: GET /wp/v2/users
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -193,7 +193,7 @@ paths:
       operationId: createWpV2Users
       summary: POST /wp/v2/users
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -288,7 +288,7 @@ paths:
       operationId: listWpV2UsersMe
       summary: GET /wp/v2/users/me
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -336,7 +336,7 @@ paths:
       operationId: createWpV2UsersMe
       summary: POST /wp/v2/users/me
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -430,7 +430,7 @@ paths:
       operationId: replaceWpV2UsersMe
       summary: PUT /wp/v2/users/me
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -524,7 +524,7 @@ paths:
       operationId: updateWpV2UsersMe
       summary: PATCH /wp/v2/users/me
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -618,7 +618,7 @@ paths:
       operationId: deleteWpV2UsersMe
       summary: DELETE /wp/v2/users/me
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -671,7 +671,7 @@ paths:
       operationId: getWpV2UsersById
       summary: GET /wp/v2/users/{id}
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -724,7 +724,7 @@ paths:
       operationId: createWpV2UsersById
       summary: POST /wp/v2/users/{id}
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -824,7 +824,7 @@ paths:
       operationId: replaceWpV2UsersById
       summary: PUT /wp/v2/users/{id}
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -924,7 +924,7 @@ paths:
       operationId: updateWpV2UsersById
       summary: PATCH /wp/v2/users/{id}
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -1024,7 +1024,7 @@ paths:
       operationId: deleteWpV2UsersById
       summary: DELETE /wp/v2/users/{id}
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -1082,7 +1082,7 @@ paths:
       operationId: listWpV2UsersByUserIdApplicationPasswords
       summary: GET /wp/v2/users/{user_id}/application-passwords
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -1135,7 +1135,7 @@ paths:
       operationId: createWpV2UsersByUserIdApplicationPasswords
       summary: POST /wp/v2/users/{user_id}/application-passwords
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -1192,7 +1192,7 @@ paths:
       operationId: deleteWpV2UsersByUserIdApplicationPasswords
       summary: DELETE /wp/v2/users/{user_id}/application-passwords
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -1237,7 +1237,7 @@ paths:
       operationId: listWpV2UsersByUserIdApplicationPasswordsIntrospect
       summary: GET /wp/v2/users/{user_id}/application-passwords/introspect
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -1291,7 +1291,7 @@ paths:
       operationId: getWpV2UsersByUserIdApplicationPasswordsByUuid
       summary: GET /wp/v2/users/{user_id}/application-passwords/{uuid}
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -1349,7 +1349,7 @@ paths:
       operationId: createWpV2UsersByUserIdApplicationPasswordsByUuid
       summary: POST /wp/v2/users/{user_id}/application-passwords/{uuid}
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -1411,7 +1411,7 @@ paths:
       operationId: replaceWpV2UsersByUserIdApplicationPasswordsByUuid
       summary: PUT /wp/v2/users/{user_id}/application-passwords/{uuid}
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -1473,7 +1473,7 @@ paths:
       operationId: updateWpV2UsersByUserIdApplicationPasswordsByUuid
       summary: PATCH /wp/v2/users/{user_id}/application-passwords/{uuid}
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response
@@ -1535,7 +1535,7 @@ paths:
       operationId: deleteWpV2UsersByUserIdApplicationPasswordsByUuid
       summary: DELETE /wp/v2/users/{user_id}/application-passwords/{uuid}
       tags:
-      - users
+      - Users
       responses:
         '200':
           description: Successful response

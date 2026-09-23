@@ -30,20 +30,10 @@
   ],
   "archived": [],
   "errors": [],
-  "warnings": [],
+  "warnings": [
+    "no openapi/_original/ archive: this run re-split PREVIOUSLY REFINED output, so any base URL it carries is inherited from an earlier pass rather than read from a document the provider published"
+  ],
   "notes": [
-    "prometheus-fuels-categories-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "prometheus-fuels-comments-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "prometheus-fuels-media-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "prometheus-fuels-news-articles-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "prometheus-fuels-pages-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "prometheus-fuels-posts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "prometheus-fuels-search-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "prometheus-fuels-statuses-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "prometheus-fuels-tags-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "prometheus-fuels-taxonomies-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "prometheus-fuels-types-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "prometheus-fuels-users-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
   "skipped": []
