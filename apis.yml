@@ -47,7 +47,7 @@ x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.23'
 created: '2026-08-05'
-modified: '2026-08-05'
+modified: '2026-10-06'
 tags:
 - Company
 - Energy
@@ -89,6 +89,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://prometheusfuels.ai/feed/
+  type: BlogRSS
 - type: Authentication
   url: authentication/prometheus-fuels-authentication.yml
 - type: Conventions
