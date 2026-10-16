@@ -1,0 +1,14 @@
+{
+  "repo": "prometheus-fuels",
+  "feeds": [
+    {
+      "source": "https://prometheusfuels.ai/feed/",
+      "feed_url": "https://prometheusfuels.ai/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-10-10T13:15:00Z"
+}
