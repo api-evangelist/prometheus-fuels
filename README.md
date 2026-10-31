@@ -64,5 +64,108 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Prometheus Fuels is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/prometheus-fuels_stock/
+Prometheus Fuels is a Santa Cruz, California energy company founded in 2019 by Rob McGinnis and launched out of Y Combinator, producing carbon-neutral electrofuels from atmospheric CO2. Its "no-desorb" direct air capture system dissolves CO2 into carbonate ions in water, and its Faraday Reactor hydrocarbon electrolyzer converts that carbon into methanol, gasoline, diesel, jet fuel and renewable natural gas at room temperature and atmospheric pressure using off-grid solar power. The company also markets an Ultra Long Duration Energy Storage (ULDES) product aimed at data-center power, and operates the Titan Forge Alpha pilot plant in Santa Cruz. It is backed by BMW i Ventures, Maersk Growth and Y Combinator. Prometheus Fuels publishes no product API, developer portal or SDK — it is a physical fuels manufacturer. The single machine-readable surface it operates is the WordPress REST API (wp/v2) behind its corporate site at prometheusfuels.ai, which serves anonymous read access to pages, posts, the site's `news-articles` custom post type, categories, tags, media, comments, users, search, taxonomies, types and statuses, with write operations gated behind WordPress application passwords. This profile was enriched by the API Evangelist pipeline from that live surface.
+
+**Areas:** Company · Energy · Climate Tech · Carbon Capture · Synthetic Fuels · Direct Air Capture · Energy Storage · content-api · WordPress
+
+## Prometheus Fuels on APIs.io
+
+Everything profiled for Prometheus Fuels is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/prometheus-fuels/](https://apis.io/providers/prometheus-fuels/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Prometheus Fuels Website (WordPress REST)](https://apis.io/apis/prometheus-fuels/prometheusfuels-ai-website-wordpress-rest/) — The public WordPress REST API (wp-json) of the Prometheus Fuels website at prometheusfuels.ai: the route index of the site's content management system,…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [prometheus-fuels-site-content](https://apis.io/servers/prometheus-fuels/prometheus-fuels-site-content/)
+
+#### Collections (12)
+
+Postman and Open Collection request collections.
+
+- [Moved to /providers/prometheus-fuels/](https://apis.io/collections/prometheus-fuels/open-prometheus-fuels-categories-api/)
+- [Moved to /providers/prometheus-fuels/](https://apis.io/collections/prometheus-fuels/open-prometheus-fuels-comments-api/)
+- [Moved to /providers/prometheus-fuels/](https://apis.io/collections/prometheus-fuels/open-prometheus-fuels-media-api/)
+- [Moved to /providers/prometheus-fuels/](https://apis.io/collections/prometheus-fuels/open-prometheus-fuels-news-articles-api/)
+- [Moved to /providers/prometheus-fuels/](https://apis.io/collections/prometheus-fuels/open-prometheus-fuels-pages-api/)
+- [Moved to /providers/prometheus-fuels/](https://apis.io/collections/prometheus-fuels/open-prometheus-fuels-posts-api/)
+- [Moved to /providers/prometheus-fuels/](https://apis.io/collections/prometheus-fuels/open-prometheus-fuels-search-api/)
+- [Moved to /providers/prometheus-fuels/](https://apis.io/collections/prometheus-fuels/open-prometheus-fuels-statuses-api/)
+- [Moved to /providers/prometheus-fuels/](https://apis.io/collections/prometheus-fuels/open-prometheus-fuels-tags-api/)
+- [Moved to /providers/prometheus-fuels/](https://apis.io/collections/prometheus-fuels/open-prometheus-fuels-taxonomies-api/)
+- [Moved to /providers/prometheus-fuels/](https://apis.io/collections/prometheus-fuels/open-prometheus-fuels-types-api/)
+- [Moved to /providers/prometheus-fuels/](https://apis.io/collections/prometheus-fuels/open-prometheus-fuels-users-api/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Prometheus Fuels Authentication](https://apis.io/security/prometheus-fuels/prometheus-fuels-authentication/)
+- [Prometheus Fuels Domain Security](https://apis.io/security/prometheus-fuels/prometheus-fuels-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://prometheusfuels.ai/)
+- [GitHub](https://github.com/Prometheus-Fuels)
+
+## API Evangelist rating
+
+**Kin Score 11.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 23.2 |
+| Access clarity | 0.0 |
+
+**Agent readiness 4.1** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.9** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/prometheus-fuels/](https://apis.io/providers/prometheus-fuels/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Prometheus Fuels: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/prometheus-fuels/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
